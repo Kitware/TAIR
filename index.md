@@ -13,4 +13,80 @@ hero:
   headline: "TAIR: Toolkit for Autonomous Interventions and Robotics"
   text: >-
     TAIR combines comprehensive open-access datasets and anatomical models with an open-source testbed. Use these resources to test, train, and evaluate autonomous robotic stroke intervention technologies for research and commercial applications.
+
+# ==================================================
+# CLINICAL DATA
+# Replace placeholder URLs and verify release details before launch.
+# ==================================================
+clinical_data:
+  subheadline: Clinical data sets
+  headline: Clinical data for stroke intervention research and development
+  text: >-
+    The TAIR database includes vascular imaging data that represents the critical imaging modalities essential for neurovascular procedures. These modalities are used to visualize the vascular anatomy, identify pathology, and guide procedures. These targeted datasets support workflows connected with the TAIR testbed, and also support community-wide clinical and diagnostic research. A flexible permissive license allows use in academic, government, and commercial applications.
+  datasets:
+    - category: CTA / MRA
+      title: CTA & MRA imaging
+      text: >-
+        A large-scale multi-center compilation of Computed Tomography Angiography (CTA) and Magnetic Resonance Angiography (MRA). All data were collected as part of routine critical care. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Defacing algorithms were applied to remove potentially identifying facial structures.
+      details:
+        - label: Current release (12.34.2027)
+          value: 500 studies
+        - label: Final release (12.34.2027)
+          value: 2,000 studies
+        - label: Format
+          value: DICOM
+    - category: Flouroscopy
+      title: X-Ray Flouroscopy Video
+      text: >-
+        Videos of X-ray fluoroscopy procedures collected from a multi-center study during interventional procedures. Fluoroscopic videos are paired with CTA/MRA imaging from the CTA/MRA database for multi-modality research and development use cases. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Algorithms were applied to remove potentially identifying facial structures and burned in text.
+      details:
+        - label: Current release (12.34.2027)
+          value: 125–250 datasets
+        - label: Final release (12.34.2027)
+          value: 1,250 datasets
+        - label: Format
+          value: DICOM cine + JSON metadata
+  download:
+    label: Download the data
+    url: "#"
+    icon: ri-download-line
+  license:
+    headline: License
+    items:
+      - label: Data license
+        value: Creative Commons Attribution 4.0 International (CC BY 4.0)
+      - label: Data citation
+        value: <url>
+  citation:
+    label: Cite the dataset
+    copy_label: Copy
+    copy_success: Copied!
+    code: |
+      @dataset{tair2026,
+        title  = {TAIR: Testbed for Autonomous Interventions and Robotics -- Neurovascular Data Release},
+        author = {Kitware, Inc. and UNC Chapel Hill and Johns Hopkins University and University of Pittsburgh},
+        year   = {2026},
+        publisher = {ARPA-H AIR Program},
+        license = {CC BY 4.0}
+      }
+  model:
+    subheadline: 03 – Anatomical Models
+    headline: Segmented, centerlined, and annotated models, as well as statistical-shape models
+    text: >-
+      This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and XX models generated from population statistics and shape-modeling techniques.
+    button:
+      label: View on GitLab
+      url: "https://gitlab.com/"
+      icon: ri-gitlab-fill
+    details:
+      - label: Release
+        value: 100 models + 1 population SSM
+      - label: Geometry
+        value: 2,000 models + multi-parameter SSMs
+      - label: Formats
+        value: VTK · NIfTI · OpenUSD · JSON graphs
+      - label: Derivatives
+        value: Meshes, centerlines, SSM coefficients
+      - label: License
+        value: Creative Commons Attribution 4.0 International License (CC BY 4.0)
 ---
