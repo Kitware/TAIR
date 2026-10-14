@@ -1360,9 +1360,6 @@
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
-  .mt-9 {
-    margin-top: calc(var(--spacing) * 9);
-  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -1426,23 +1423,14 @@
   .h-logo {
     height: var(--spacing-logo);
   }
-  .max-h-12 {
-    max-height: calc(var(--spacing) * 12);
-  }
   .max-h-36 {
     max-height: calc(var(--spacing) * 36);
-  }
-  .max-h-48 {
-    max-height: calc(var(--spacing) * 48);
   }
   .min-h-10\.75 {
     min-height: calc(var(--spacing) * 10.75);
   }
   .min-h-11\.5 {
     min-height: calc(var(--spacing) * 11.5);
-  }
-  .min-h-14\.5 {
-    min-height: calc(var(--spacing) * 14.5);
   }
   .min-h-35 {
     min-height: calc(var(--spacing) * 35);
@@ -1606,18 +1594,8 @@
       margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .gap-x-2 {
-    column-gap: calc(var(--spacing) * 2);
-  }
   .gap-x-3 {
     column-gap: calc(var(--spacing) * 3);
-  }
-  .space-x-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
-    }
   }
   .overflow-hidden {
     overflow: hidden;
@@ -1759,9 +1737,6 @@
   .py-3\.5 {
     padding-block: calc(var(--spacing) * 3.5);
   }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
-  }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
@@ -1836,10 +1811,6 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-  .leading-5\.25 {
-    --tw-leading: calc(var(--spacing) * 5.25);
-    line-height: calc(var(--spacing) * 5.25);
   }
   .leading-normal {
     --tw-leading: var(--leading-normal);
@@ -2416,11 +2387,6 @@
   inherits: false;
   initial-value: 0;
 }
-@property --tw-space-x-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -2523,7 +2489,6 @@
       --tw-scale-z: 1;
       --tw-scroll-snap-strictness: proximity;
       --tw-space-y-reverse: 0;
-      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
