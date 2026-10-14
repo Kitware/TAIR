@@ -37,6 +37,7 @@
 @source "../../_layouts";
 @source "../../_includes";
 @source "../js";
+@source not "../../.github";
 
 @theme {
   --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
