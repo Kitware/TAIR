@@ -89,4 +89,78 @@ clinical_data:
         value: Meshes, centerlines, SSM coefficients
       - label: License
         value: Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+# ==================================================
+# TESTBED SIMULATOR
+# ==================================================
+testbed:
+  subheadline: TAIR simulator
+  headline: Training and evaluation for stroke intervention simulations
+  text: >-
+    Use the TAIR testbed to simulate stroke interventions across a range of patient anatomies and pathologies. The physics-based simulator represents soft-tissue mechanics, fluid dynamics, robot kinematics, and X-ray fluoroscopy. Replacement suggestion: An open interface connects robotic systems to the testbed for testing, training, and performance evaluation using FDA-defined metrics.
+  callout:
+    text: Access the open-source TAIR testbed and supporting resources.
+    label: View on GitLab
+    url: "https://gitlab.com/"
+    icon: ri-gitlab-fill
+    note: First open-source release is scheduled for March 2027
+  phases:
+    - number: Offline
+      title: Data preparation
+      items:
+        - Download and organize clinical imaging
+        - Segment anatomy and prepare models
+        - Select scenarios and intervention targets
+    - number: Real-Time
+      title: Simulation
+      items:
+        - Configure anatomy, devices, and conditions
+        - Run intervention and navigation scenarios
+        - Capture repeatable trial data
+    - number: Offline
+      title: Evaluation and analysis
+      items:
+        - Measure performance and outcomes
+        - Review intervention efficiency and safety
+        - Compare methods across scenarios
+  platforms_headline: Built on proven open-source platforms
+  platforms_text: >-
+    Rather than a bespoke one-off simulator, TAIR extends toolkits the team already develops and maintains — and contributes every improvement back upstream.
+  platforms:
+    - name: 3D Slicer · TubeTK
+      url: "https://github.com/finetjul/TubeTK"
+      new_tab: true
+      text: Anatomical model segmentation and centerline extraction
+    - name: Slicersalt
+      url: "https://salt.slicer.org/"
+      new_tab: true
+      text: Statistical shape modeling of population-level vasculature
+    - name: Pulse Physiology Engine
+      url: "https://pulse.kitware.com/"
+      new_tab: true
+      text: Patient physiology and hemodynamic modeling
+    - name: iMSTK
+      url: "https://imstk.gitlab.io/index.html"
+      new_tab: true
+      text: Vessel, clot, and device mechanics; interactive multiphysics
+    - name: OpenUSD
+      url: "https://openusd.org/"
+      new_tab: true
+      text: Scene composition — the patient-specific digital twin
+    - name: VTK · ITK
+      url: "https://vtk.org/"
+      new_tab: true
+      text: Registration, scene graph assembly, and visualization
+    - name: DeepDRR · ASTRA
+      url: "https://github.com/arcadelab/deepdrr"
+      new_tab: true
+      text: Physics-based X-ray image formation and reconstruction
+    - name: NVIDIA Isaac Sim · ROS 2
+      url: "https://developer.nvidia.com/isaac/sim"
+      new_tab: true
+      text: Robot digital twin, two-way interface, HITL testing
+    - name: NVIDIA Isaac for Healthcare
+      url: "https://developer.nvidia.com/isaac/healthcare"
+      new_tab: true
+      text: The three-computer solution for healthcare robotics
 ---
