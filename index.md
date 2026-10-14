@@ -163,4 +163,38 @@ testbed:
       url: "https://developer.nvidia.com/isaac/healthcare"
       new_tab: true
       text: The three-computer solution for healthcare robotics
+
+# ==================================================
+# DOCUMENTATION + DOWNLOADS
+# ==================================================
+documentation:
+  subheadline: TAIR documentation
+  headline: Everything documented, versioned, and open
+  text: >-
+    Find technical guidance for using TAIR data and open-source software and review licensing and citation information.
+  items:
+    - category: Data
+      title: Dataset and anatomical model documentation
+      text: Each database includes a data manifest, including a list of files, data dictionary, and file sizes. The anatomic modeling software pipeline documentation can be found in the GitLab repository.
+      buttons:
+        - label: View on GitLab
+          url: "https://gitlab.com/"
+          icon: ri-gitlab-fill
+    - category: Platform
+      title: Testbed & API
+      text: The TAIR testbed documentation explains how the models are defined and implemented. It also includes class documentation, API definition and usage, and an SDK. Additional resources cover performance specifications, verification and validation cases and results, as well as version, license, and citation information.
+      buttons:
+        - label: Tech docs
+          url: "#"
+          icon: ri-book-open-line
+        - label: View on GitLab
+          url: "https://gitlab.com/"
+          icon: ri-gitlab-fill
+    - category: Use cases
+      title: Verification, validation, and credibility
+      text: Working closely with the FDA and clinical collaborators, the testbed is undergoing rigorous verification, validation, and credibility assessments. The final report will be available at the conclusion of Phase I of the ARPA-H AIR program.
+      buttons:
+        - label: Download report
+          url: "#"
+          icon: ri-download-line
 ---
