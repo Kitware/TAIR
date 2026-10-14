@@ -10,19 +10,20 @@ module.exports = {
     extend: {
       colors: {
         ink: {
-          950: "#101828",
-          900: "#1d2939",
-          800: "#344054"
+          950: "#031529",
+          900: "#062847",
+          800: "#073c68"
         },
-        brand: "#6554c0",
-        accent: "#2e90fa"
+        brand: "#4cc43b",
+        accent: "#0875d1"
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+        sans: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["Space Mono", "ui-monospace", "SFMono-Regular", "monospace"]
       },
       boxShadow: {
-        panel: "0 24px 70px rgba(16, 24, 40, 0.18)",
-        navigation: "0 8px 12px rgba(16, 24, 40, 0.15)"
+        panel: "0 24px 70px rgba(2, 18, 35, 0.18)",
+        navigation: "0 8px 12px rgba(3, 21, 41, 0.15)"
       }
     }
   },
@@ -31,21 +32,21 @@ module.exports = {
     themes: [
       {
         starter: {
-          primary: "#6554c0",
+          primary: "#4cc43b",
           "primary-content": "#ffffff",
-          secondary: "#2e90fa",
+          secondary: "#0875d1",
           "secondary-content": "#ffffff",
-          accent: "#12b76a",
-          neutral: "#101828",
+          accent: "#30a8e8",
+          neutral: "#031529",
           "neutral-content": "#ffffff",
           "base-100": "#ffffff",
-          "base-200": "#f2f4f7",
-          "base-300": "#d0d5dd",
-          "base-content": "#1d2939",
-          info: "#2e90fa",
-          success: "#12b76a",
-          warning: "#f79009",
-          error: "#d92d20"
+          "base-200": "#f4f6f8",
+          "base-300": "#dce2e8",
+          "base-content": "#17202a",
+          info: "#0875d1",
+          success: "#4cc43b",
+          warning: "#f3b33d",
+          error: "#dc4c64"
         }
       }
     ]

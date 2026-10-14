@@ -1,5 +1,5 @@
 {
-  "name": "frontmatter-jekyll-starter",
+  "name": "tair",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,9 +10,10 @@
     "build": "npm run css:build && bundle exec jekyll build"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
     "@tailwindcss/typography": "^0.5.4",
-    "concurrently": "^9.1.2",
-    "daisyui": "^4.12.24",
+    "concurrently": "^10.0.6",
+    "daisyui": "^5.7.50",
     "remixicon": "^4.9.1",
     "tailwindcss": "^4.3.3"
   }
