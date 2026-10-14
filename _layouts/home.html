@@ -180,7 +180,7 @@ layout: default
           {% for detail in page.clinical_data.model.details %}
             <div class="flex min-h-11.5 items-center justify-between gap-5 border-b border-base-300 py-3 text-sm leading-normal">
               <dt class="uppercase tracking-ui text-base-content">{{ detail.label | escape }}</dt>
-              <dd class="max-w-2/3 font-mono text-right text-copy-strong">{{ detail.value | escape }}</dd>
+              <dd class="flex items-center gap-x-3 max-w-2/3 font-mono text-right text-copy-strong">{{ detail.value }}</dd>
             </div>
           {% endfor %}
         </dl>

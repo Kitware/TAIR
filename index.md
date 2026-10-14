@@ -80,7 +80,7 @@ clinical_data:
       icon: ri-gitlab-fill
     details:
       - label: Release
-        value: 100 models + 1 population SSM
+        value: 100 models + 1 population SSM <a href="#" class="btn btn-primary btn-xs">Download models</a>
       - label: Geometry
         value: 2,000 models + multi-parameter SSMs
       - label: Formats
