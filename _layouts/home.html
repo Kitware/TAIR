@@ -251,7 +251,7 @@ layout: default
       <div class="mt-6 border-t border-base-300">
         {% for platform in page.testbed.platforms %}
           <div class="grid gap-2 border-b border-base-300 py-3 text-sm md:grid-cols-[1fr_1.5fr]">
-            <a class="text-primary underline" href="{{ platform.url }}">{{ platform.name | escape }}</a>
+            <a class="text-primary underline" href="{{ platform.url }}" {% if platform.new_tab %}target="_blank" rel="noopener"{% endif %}>{{ platform.name | escape }}</a>
             <span class="text-right text-base-content">{{ platform.text | escape }}</span>
           </div>
         {% endfor %}
