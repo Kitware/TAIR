@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: tair --default;
+  logs: false;
+}
+@plugin "daisyui/theme" {
+  name: "tair";
+  default: true;
+  color-scheme: light;
+  --color-primary: #3eae2b;
+  --color-primary-content: #ffffff;
+  --color-secondary: #00559e;
+  --color-secondary-content: #ffffff;
+  --color-accent: #239ac8;
+  --color-accent-content: #ffffff;
+  --color-neutral: #373735;
+  --color-neutral-content: #ffffff;
+  --color-base-100: #ffffff;
+  --color-base-200: #f2f2f2;
+  --color-base-300: #d1d0cf;
+  --color-base-content: #535250;
+  --color-info: #00559e;
+  --color-success: #3eae2b;
+  --color-warning: #d99a24;
+  --color-error: #c94855;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@source "../../*.html";
+@source "../../*.md";
+@source "../../_layouts";
+@source "../../_includes";
+@source "../js";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink-950: #00162a;
+  --color-ink-900: #003361;
+  --color-ink-800: #004078;
+  --color-brand: #3eae2b;
+  --color-tair-blue: #00559e;
+  --color-heading: #373735;
+  --color-copy-strong: #1b1b1b;
+  --color-nav-muted: #595959;
+  --color-primary-dark: #004078;
+  --color-primary-bright: #0068c7;
+  --color-callout-muted: #c8dff2;
+  --color-footer-border: #e7e7e7;
+
+  --text-display: 3.125rem;
+  --text-display--line-height: 3.75rem;
+  --text-contact: 1.3125rem;
+  --text-contact--line-height: normal;
+
+  --container-hero-copy: 31.75rem;
+  --container-data-heading: 48.5rem;
+  --container-data-copy: 54.125rem;
+  --container-simulator-copy: 50.4375rem;
+  --container-documentation-copy: 53.5rem;
+  --container-footer-copy: 41.125rem;
+
+  --tracking-section: 0.1875rem;
+  --tracking-ui: 0.04375rem;
+  --tracking-footer: 0.09375rem;
+
+  --spacing-section-top: 5.625rem;
+  --spacing-section-bottom: 6.875rem;
+  --spacing-hero-navigation: 9.5625rem;
+  --spacing-navigation-tile: 2.6875rem;
+  --spacing-logo: 2.0625rem;
+
+  --shadow-card: 0 0.5rem 1.5rem rgb(0 0 0 / 15%);
+  --shadow-navigation: 0 0.5rem 0.75rem rgb(3 21 41 / 15%);
+
+  --background-image-hero: linear-gradient(
+    79.61deg,
+    #001a31 24.731%,
+    rgb(0 37 70 / 75%) 35.552%,
+    rgb(0 51 97 / 50%) 44.656%,
+    rgb(0 51 97 / 25%) 57.337%,
+    rgb(0 51 97 / 50%) 67.492%,
+    rgb(0 38 72 / 75%) 72.499%,
+    #001a32 80.499%
+  );
+  --background-image-contact: linear-gradient(to bottom, #091812, #003361);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base-100 font-sans text-base-content antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-primary;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
