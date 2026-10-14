@@ -1,0 +1,372 @@
+---
+layout: default
+---
+
+<section
+  id="top"
+  class="relative flex min-h-screen flex-col overflow-hidden bg-ink-950 text-white"
+>
+  <img
+    src="{{ page.hero.background_image | relative_url }}"
+    alt=""
+    class="absolute inset-0 size-full object-cover object-center"
+    aria-hidden="true"
+  >
+  <div
+    class="absolute inset-0 bg-hero mix-blend-multiply"
+    aria-hidden="true"
+  ></div>
+  <div class="relative z-20 mx-auto flex h-18 w-full max-w-7xl shrink-0 items-center justify-between px-6 lg:px-0">
+    <a href="#top" class="block shrink-0">
+      <img
+        src="{{ site.data.site.brand.logo.src_reversed | relative_url }}"
+        alt="{{ site.data.site.brand.logo.alt | escape }}"
+        class="h-logo w-auto"
+      >
+    </a>
+    <div class="flex items-center gap-2">
+      <a class="btn btn-primary btn-sm lg:btn-md rounded-none text-primary-content" href="{{ site.data.site.cta.button.url }}">
+        {{ site.data.site.cta.button.label | escape }}
+      </a>
+      {% if site.data.site.source.show %}
+        <a
+          class="btn btn-outline btn-sm lg:btn-md rounded-none border-white/45 text-white hover:border-white hover:bg-base-100 hover:text-ink-950"
+          href="{{ site.data.site.source.url }}"
+        >
+          {{ site.data.site.source.label | escape }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pb-hero-navigation lg:px-0">
+    <div class="max-w-hero-copy">
+      <h1 class="text-4xl font-bold leading-normal text-white">
+        {{ page.hero.headline | escape }}
+      </h1>
+      {% if page.hero.text %}
+        <p class="mt-2.5 max-w-hero-copy py-2.5 text-xl leading-normal text-base-300">
+          {{ page.hero.text | escape }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+  {% assign navigation_count = site.data.site.navigation.size %}
+  <nav
+    id="section-navigation"
+    class="absolute inset-x-0 bottom-0 z-20 border-b border-base-300 bg-base-100 text-base-content"
+    aria-label="Page sections"
+  >
+    <div
+      class="mx-auto flex w-full max-w-7xl snap-x snap-mandatory overflow-x-auto px-0 md:grid md:grid-cols-[repeat(var(--navigation-count),minmax(0,1fr))] md:overflow-visible"
+      style="--navigation-count: {{ navigation_count }};"
+    >
+      {% for item in site.data.site.navigation %}
+        <a
+          class="group flex min-w-64 snap-start flex-col justify-center border-r border-base-300 px-6 py-navigation-tile md:min-w-0"
+          href="{{ item.url }}"
+        >
+          <span class="text-lg font-bold leading-normal text-black transition-colors group-hover:text-secondary">
+            {{ item.label | escape }}
+          </span>
+          {% if item.detail %}
+            <span class="font-mono text-sm leading-normal text-nav-muted">
+              {{ item.detail | escape }}
+            </span>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </nav>
+</section>
+
+<section id="clinical-data" class="bg-base-200/50 pb-section-bottom pt-section-top">
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-0">
+    {% if page.clinical_data.subheadline %}
+      <p class="font-mono text-base uppercase tracking-section text-secondary">
+        {{ page.clinical_data.subheadline | escape }}
+      </p>
+    {% endif %}
+    <h2 class="mt-10 max-w-data-heading text-4xl font-bold leading-normal text-heading">
+      {{ page.clinical_data.headline | escape }}
+    </h2>
+    {% if page.clinical_data.text %}
+      <p class="mt-2.5 max-w-data-copy py-2.5 text-base leading-normal text-base-content">
+        {{ page.clinical_data.text | escape }}
+      </p>
+    {% endif %}
+    <div class="mt-12 grid border-l border-t border-base-300 md:grid-cols-2">
+      {% for dataset in page.clinical_data.datasets %}
+        <article class="flex flex-col border-b border-r border-base-300 bg-base-100 px-6 py-9">
+          <p class="font-mono text-sm uppercase tracking-ui text-primary">
+            0{{ forloop.index }} – {{ dataset.category | escape }}
+          </p>
+          <h3 class="mt-1.25 text-lg font-bold text-heading">
+            {{ dataset.title | escape }}
+          </h3>
+          <p class="mt-5 flex-1 text-base leading-normal text-heading">
+            {{ dataset.text | escape }}
+          </p>
+          {% if dataset.details %}
+            <dl class="mt-6 border-t border-base-300">
+              {% for detail in dataset.details %}
+                <div class="flex min-h-11.5 items-center justify-between gap-5 border-b border-base-300 py-3 text-sm leading-normal">
+                  <dt class="uppercase tracking-ui text-base-content">{{ detail.label | escape }}</dt>
+                  <dd class="font-mono text-right text-copy-strong">{{ detail.value | escape }}</dd>
+                </div>
+              {% endfor %}
+            </dl>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+    {% if page.clinical_data.download %}
+      <div class="flex justify-end bg-neutral p-4">
+        <a class="btn btn-primary rounded-none text-primary-content" href="{{ page.clinical_data.download.url }}">
+          {{ page.clinical_data.download.label | escape }}
+        </a>
+      </div>
+    {% endif %}
+    <div class="mt-12 bg-ink-950 px-6 py-9 text-white">
+      <h3 class="text-lg font-bold">{{ page.clinical_data.license.headline | escape }}</h3>
+      <dl class="mt-6 text-sm leading-normal text-white/80">
+        {% for item in page.clinical_data.license.items %}
+          <div class="grid min-h-10.75 gap-1 border-t border-white/10 py-3 md:grid-cols-[195px_1fr]">
+            <dt class="uppercase tracking-ui text-white/55">{{ item.label | escape }}</dt>
+            <dd>{{ item.value | escape }}</dd>
+          </div>
+        {% endfor %}
+      </dl>
+      {% if page.clinical_data.citation %}
+        <div class="mt-7">
+          <p class="text-lg font-bold">{{ page.clinical_data.citation.label | escape }}</p>
+          <div class="relative mt-6 border border-primary-bright bg-primary-dark">
+            <button
+              class="btn btn-ghost btn-sm absolute right-3 top-3 z-10 rounded-none text-white hover:bg-white/10"
+              type="button"
+              data-copy-button
+              data-copy-success="{{ page.clinical_data.citation.copy_success | default: 'Copied!' | escape }}"
+              aria-label="Copy citation"
+            >
+              <i class="ri-file-copy-line text-lg" data-copy-icon aria-hidden="true"></i>
+              <span data-copy-label>
+                {{ page.clinical_data.citation.copy_label | default: 'Copy' | escape }}
+              </span>
+            </button>
+            <pre class="overflow-x-auto p-6 pr-28 font-mono text-sm leading-normal text-white/80"><code data-copy-source>{{- page.clinical_data.citation.code | escape -}}</code></pre>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {% if page.clinical_data.model %}
+      <article class="mt-12 grid border border-base-300 bg-base-100 md:grid-cols-[520px_1fr]">
+        <div class="p-6 md:py-9">
+          <p class="font-mono text-sm uppercase tracking-ui text-primary">
+            {{ page.clinical_data.model.subheadline | escape }}
+          </p>
+          <h3 class="mt-2.5 text-lg font-bold text-heading">
+            {{ page.clinical_data.model.headline | escape }}
+          </h3>
+          <p class="mt-2.5 text-base leading-normal text-heading">
+            {{ page.clinical_data.model.text | escape }}
+          </p>
+          {% if page.clinical_data.model.button %}
+            <a class="btn btn-primary mt-5 rounded-none text-primary-content" href="{{ page.clinical_data.model.button.url }}">
+              <i class="{{ page.clinical_data.model.button.icon }} text-lg" aria-hidden="true"></i>
+              {{ page.clinical_data.model.button.label | escape }}
+            </a>
+          {% endif %}
+        </div>
+        <dl class="p-6 md:py-9">
+          {% for detail in page.clinical_data.model.details %}
+            <div class="flex min-h-11.5 items-center justify-between gap-5 border-b border-base-300 py-3 text-sm leading-normal">
+              <dt class="uppercase tracking-ui text-base-content">{{ detail.label | escape }}</dt>
+              <dd class="max-w-2/3 font-mono text-right text-copy-strong">{{ detail.value | escape }}</dd>
+            </div>
+          {% endfor %}
+        </dl>
+      </article>
+    {% endif %}
+  </div>
+</section>
+
+<section id="testbed" class="bg-base-200 pb-section-bottom pt-section-top">
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-0">
+    <div class="grid gap-15 lg:grid-cols-[807px_400px] lg:items-center">
+      <div>
+        {% if page.testbed.subheadline %}
+          <p class="font-mono text-base uppercase tracking-section text-secondary">
+            {{ page.testbed.subheadline | escape }}
+          </p>
+        {% endif %}
+        <h2 class="mt-10 max-w-simulator-copy text-4xl font-bold leading-normal text-heading">
+          {{ page.testbed.headline | escape }}
+        </h2>
+        <p class="mt-2.5 max-w-simulator-copy py-2.5 text-base leading-normal text-base-content">
+          {{ page.testbed.text | escape }}
+        </p>
+      </div>
+      {% if page.testbed.callout %}
+        <div class="bg-primary-dark p-9 relative overflow-hidden text-center text-white">
+          <img
+            src="{{ '/assets/images/gridbg.png' | relative_url }}"
+            alt=""
+            class="absolute inset-0 size-full object-cover opacity-70 mix-blend-overlay"
+            aria-hidden="true"
+          >
+          <div class="relative">
+            <p class="text-base leading-normal">{{ page.testbed.callout.text | escape }}</p>
+            <a class="btn btn-primary mt-6 rounded-none text-primary-content" href="{{ page.testbed.callout.url }}">
+              <i class="{{ page.testbed.callout.icon }} text-lg" aria-hidden="true"></i>
+              {{ page.testbed.callout.label | escape }}
+            </a>
+            {% if page.testbed.callout.note %}
+              <p class="mt-1.5 text-xs font-light text-callout-muted">
+                {{ page.testbed.callout.note | escape }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <div
+      class="mt-16 grid border-l border-t border-base-300 bg-base-100 shadow-card md:grid-cols-3"
+    >
+      {% for phase in page.testbed.phases %}
+        <article class="border-b border-r border-base-300 bg-base-100 px-6 py-9">
+          <p class="font-mono text-sm uppercase tracking-ui text-primary">{{ phase.number | escape }}</p>
+          <h3 class="mt-2.5 text-lg font-bold text-heading">{{ phase.title | escape }}</h3>
+          <ul class="mt-6 border-t border-base-300 text-sm leading-normal text-base-content">
+            {% for item in phase.items %}
+              <li class="border-b border-base-300 py-3 tracking-ui">{{ item | escape }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-heading">{{ page.testbed.platforms_headline | escape }}</h3>
+      <p class="mt-2.5 max-w-simulator-copy text-base leading-normal text-base-content">
+        {{ page.testbed.platforms_text | escape }}
+      </p>
+      <div class="mt-6 border-t border-base-300">
+        {% for platform in page.testbed.platforms %}
+          <div class="grid gap-2 border-b border-base-300 py-3 text-sm md:grid-cols-[1fr_1.5fr]">
+            <a class="text-primary underline" href="{{ platform.url }}">{{ platform.name | escape }}</a>
+            <span class="text-right text-base-content">{{ platform.text | escape }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="documentation" class="bg-base-100 pb-section-bottom pt-section-top">
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-0">
+    {% if page.documentation.subheadline %}
+      <p class="font-mono text-base uppercase tracking-section text-secondary">
+        {{ page.documentation.subheadline | escape }}
+      </p>
+    {% endif %}
+    <h2 class="mt-10 text-4xl font-bold leading-normal text-heading">
+      {{ page.documentation.headline | escape }}
+    </h2>
+    <p class="mt-2.5 max-w-documentation-copy py-2.5 text-base leading-normal text-base-content">
+      {{ page.documentation.text | escape }}
+    </p>
+    <div class="mt-12 grid border-l border-t border-base-300 shadow-card md:grid-cols-3">
+      {% for item in page.documentation.items %}
+        <article class="flex min-h-88.5 flex-col border-b border-r border-base-300 bg-base-100 px-6 py-9">
+          <p class="font-mono text-sm uppercase tracking-ui text-primary">
+            {{ item.category | escape }}
+          </p>
+          <h3 class="mt-2.5 text-lg font-bold text-heading">{{ item.title | escape }}</h3>
+          <p class="mt-6 flex-1 text-base leading-normal text-base-content">{{ item.text | escape }}</p>
+          <div class="mt-6 flex flex-wrap gap-2.5">
+            {% for button in item.buttons %}
+              <a class="btn btn-primary rounded-none text-primary-content" href="{{ button.url }}">
+                {% if button.icon %}
+                  <i class="{{ button.icon }} text-lg" aria-hidden="true"></i>
+                {% endif %}
+                {{ button.label | escape }}
+              </a>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="team" class="bg-base-200 pt-section-top">
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-0">
+    <div class="grid gap-12 lg:grid-cols-[373px_1fr] lg:gap-24 lg:items-start">
+      <div>
+        {% if page.team.subheadline %}
+          <p class="font-mono text-base uppercase tracking-section text-secondary">
+            {{ page.team.subheadline | escape }}
+          </p>
+        {% endif %}
+        <h2 class="mt-10 text-display font-bold text-heading">
+          {{ page.team.headline | escape }}
+        </h2>
+        <p class="mt-2.5 py-2.5 text-base leading-normal text-base-content">
+          {{ page.team.text | escape }}
+        </p>
+      </div>
+      <div class="space-y-2.5">
+        {% for group in page.team.groups %}
+          <article class="grid bg-base-100 shadow-card md:grid-cols-[235px_1fr_1fr]">
+            <h3 class="p-6 text-2xl font-bold leading-normal text-heading">{{ group.name | escape }}</h3>
+            <div class="p-6 leading-5.25 tracking-ui">
+              <h4 class="text-primary-bright">{{ group.lead_type | escape }}</h4>
+              <p>{{ group.lead_institution | escape }}</p>
+            </div>
+            <ul class="p-6 text-base font-medium leading-5.25 list-disc tracking-ui text-base-content">
+              {% for member in group.members %}
+                <li class="mb-3 last:mb-0">{{ member | escape }}</li>
+              {% endfor %}
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% if page.team.partners %}
+      <div class="mt-9 flex min-h-35 flex-wrap items-center justify-between gap-8 px-6">
+        {% for partner in page.team.partners %}
+          <div class="flex min-h-14.5 items-center justify-center text-center text-base font-bold text-base-content">
+            {{ partner | escape }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if page.team.acknowledgements %}
+      <div class="grid gap-6 pb-section-bottom pt-7.5 md:grid-cols-[318px_1fr]">
+        <h3 class="px-6 py-8 text-2xl font-bold text-primary-dark">
+          {{ page.team.acknowledgements.headline | escape }}
+        </h3>
+        <p class="py-8 text-base leading-normal tracking-ui text-copy-strong">
+          {{ page.team.acknowledgements.text | escape }}
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section id="contact" class="relative overflow-hidden bg-contact text-white">
+  <img
+    src="{{ '/assets/images/gridbg.png' | relative_url }}"
+    alt=""
+    class="absolute inset-0 size-full object-cover opacity-70 mix-blend-overlay"
+    aria-hidden="true"
+  >
+  <div class="relative mx-auto w-full max-w-7xl px-6 py-15 lg:px-0">
+    <h2 class="text-4xl font-bold leading-normal">{{ page.contact.headline | escape }}</h2>
+    <p class="mt-1.5 text-contact">{{ page.contact.text | escape }}</p>
+    <a
+      class="btn btn-primary mt-7 shrink-0 rounded-none px-4.5 py-3.5 text-lg text-primary-content"
+      href="{{ page.contact.button.url }}"
+    >
+      {{ page.contact.button.label | escape }}
+    </a>
+  </div>
+</section>

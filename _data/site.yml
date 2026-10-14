@@ -1,0 +1,41 @@
+# ==================================================
+# SITE-WIDE BRANDING, CTA, NAVIGATION, AND FOOTER
+# ==================================================
+
+brand:
+  logo:
+    src_reversed: "/assets/images/logo-light.svg"
+    src: "/assets/images/logo.svg"
+    alt: TAIR
+
+cta:
+  button:
+    label: Download dataset
+    url: "#clinical-data"
+
+source:
+  show: true
+  label: Contact
+  url: "#contact"
+
+# These links populate both the hero tiles and the fixed header.
+# Quote URLs beginning with # because YAML treats # as a comment.
+# The hero columns automatically match the number of items.
+navigation:
+  - label: Clinical data sets
+    url: "#clinical-data"
+    detail: CT/MR • Flouroscopy
+  - label: TAIR simulator
+    url: "#testbed"
+    detail: Real-time multiphysics and robots
+  - label: TAIR documentation
+    url: "#documentation"
+    detail: Data dictionary, API, and V&V
+  - label: Team
+    url: "#team"
+    detail: Kitware + ARPA H
+
+footer:
+  disclaimer: The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the U.S. Government.
+  organization: Kitware, Inc.
+
