@@ -238,4 +238,14 @@ team:
     headline: Acknowledgements
     text: >-
       This research was funded, in part, by the Advanced Research Projects Agency for Health (ARPA-H). The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the U.S. Government.
+
+# ==================================================
+# CONTACT CALLOUT
+# ==================================================
+contact:
+  headline: Questions?
+  text: Contact the TAIR team with questions about data, project resources, and testbed integration.
+  button:
+    label: Contact the TAIR team
+    url: "mailto:hello@example.org"
 ---
