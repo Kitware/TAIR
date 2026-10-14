@@ -237,7 +237,5 @@ team:
   acknowledgements:
     headline: Acknowledgements
     text: >-
-      This research was funded, in part, by the Advanced Research Projects Agency
-      for Health (ARPA-H). The views and conclusions contained in this document
-      are those of the authors and should not be interpreted as representing the
+      This research was funded, in part, by the Advanced Research Projects Agency for Health (ARPA-H). The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the U.S. Government.
 ---
