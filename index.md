@@ -197,4 +197,47 @@ documentation:
         - label: Download report
           url: "#"
           icon: ri-download-line
+
+# ==================================================
+# TEAM
+# TO DO: put in logos
+# ==================================================
+team:
+  subheadline: Working together
+  headline: Clinicians, engineers, and scientists
+  text: >-
+    A collaboration bringing technical and clinical expertise together across three areas of research.
+  groups:
+    - name: Data
+      lead_type: Clinical Lead
+      lead_institution: University of North Carolina at Chapel Hill
+      members:
+        - Kitware, Inc.
+        - University of Pittsburgh Medical Center
+    - name: Anatomic modeling
+      lead_type: Technical Lead
+      lead_institution: Kitware, Inc.
+      members:
+        - University of North Carolina at Chapel Hill
+        - University of Pittsburgh Medical Center
+    - name: Testbed
+      lead_type: Technical Lead
+      lead_institution: Kitware, Inc.
+      members:
+        - University of North Carolina at Chapel Hill
+        - Florida State University
+        - Johns Hopkins University
+        - Lightside Surgical, Inc.
+  partners:
+    - University of Pittsburgh
+    - UNC Chapel Hill
+    - Johns Hopkins University
+    - FAMU–FSU Engineering
+    - LightSide
+  acknowledgements:
+    headline: Acknowledgements
+    text: >-
+      This research was funded, in part, by the Advanced Research Projects Agency
+      for Health (ARPA-H). The views and conclusions contained in this document
+      are those of the authors and should not be interpreted as representing the
 ---
