@@ -317,11 +317,11 @@ layout: default
         {% for group in page.team.groups %}
           <article class="grid bg-base-100 shadow-card md:grid-cols-[235px_1fr_1fr]">
             <h3 class="p-6 text-2xl font-bold leading-normal text-heading">{{ group.name | escape }}</h3>
-            <div class="p-6 leading-5.25 tracking-ui">
+            <div class="p-6">
               <h4 class="text-primary-bright">{{ group.lead_type | escape }}</h4>
               <p>{{ group.lead_institution | escape }}</p>
             </div>
-            <ul class="p-6 text-base font-medium leading-5.25 list-disc tracking-ui text-base-content">
+            <ul class="p-6 text-base list-disc text-base-content">
               {% for member in group.members %}
                 <li class="mb-3 last:mb-0">{{ member | escape }}</li>
               {% endfor %}
@@ -331,10 +331,10 @@ layout: default
       </div>
     </div>
     {% if page.team.partners %}
-      <div class="mt-9 flex min-h-35 flex-wrap items-center justify-between gap-8 px-6">
+      <div class="mt-10 flex min-h-35 flex-wrap items-center justify-between gap-8 px-6 py-6">
         {% for partner in page.team.partners %}
-          <div class="flex min-h-14.5 items-center justify-center text-center text-base font-bold text-base-content">
-            {{ partner | escape }}
+          <div class="flex-1 items-center justify-center flex">
+            <img src="{{ partner.image | relative_url }}" alt=" {{ partner.name | escape }}" class="max-h-36">
           </div>
         {% endfor %}
       </div>

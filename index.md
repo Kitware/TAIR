@@ -229,11 +229,14 @@ team:
         - Johns Hopkins University
         - Lightside Surgical, Inc.
   partners:
-    - University of Pittsburgh
-    - UNC Chapel Hill
-    - Johns Hopkins University
-    - FAMU–FSU Engineering
-    - LightSide
+    - name: University of Pittsburgh
+      image: '/assets/images/upitt-logo.png'
+    - name: UNC Chapel Hill
+      image: '/assets/images/unc-logo.jpg'
+    - name: FAMU–FSU Engineering
+      image: '/assets/images/fsu-logo.jpg'
+    - name: LightSide
+      image: '/assets/images/lightside-logo.jpg'
   acknowledgements:
     headline: Acknowledgements
     text: >-
