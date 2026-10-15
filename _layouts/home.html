@@ -331,13 +331,17 @@ layout: default
       </div>
     </div>
     {% if page.team.partners %}
-      <div class="mt-10 flex min-h-35 flex-wrap items-center justify-between gap-8 px-6 py-6">
-        {% for partner in page.team.partners %}
-          <div class="flex-1 items-center justify-center flex">
-            <img src="{{ partner.image | relative_url }}" alt=" {{ partner.name | escape }}" class="max-h-36">
-          </div>
-        {% endfor %}
-      </div>
+      <div class="mt-10 grid min-h-35 grid-cols-2 items-center gap-8 px-6 py-6 md:flex md:justify-between">
+      {% for partner in page.team.partners %}
+        <div class="flex items-center justify-center md:flex-1">
+          <img
+            src="{{ partner.image | relative_url }}"
+            alt="{{ partner.name | escape }}"
+            class="max-h-36 max-w-full object-contain"
+          >
+        </div>
+      {% endfor %}
+    </div>
     {% endif %}
     {% if page.team.acknowledgements %}
       <div class="grid gap-6 pb-section-bottom pt-7.5 md:grid-cols-[318px_1fr]">
