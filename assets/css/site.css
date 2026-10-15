@@ -1441,6 +1441,9 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1\/2 {
+    width: calc(1 / 2 * 100%);
+  }
   .w-56 {
     width: calc(var(--spacing) * 56);
   }
@@ -1467,6 +1470,9 @@
   }
   .max-w-footer-copy {
     max-width: var(--container-footer-copy);
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .max-w-hero-copy {
     max-width: var(--container-hero-copy);
@@ -1544,6 +1550,9 @@
   }
   .list-disc {
     list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -1700,6 +1709,9 @@
   }
   .bg-hero {
     background-image: var(--background-image-hero);
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
@@ -2018,14 +2030,29 @@
       }
     }
   }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
   .md\:grid {
     @media (width >= 48rem) {
       display: grid;
     }
   }
+  .md\:w-auto {
+    @media (width >= 48rem) {
+      width: auto;
+    }
+  }
   .md\:min-w-0 {
     @media (width >= 48rem) {
       min-width: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:flex-1 {
+    @media (width >= 48rem) {
+      flex: 1;
     }
   }
   .md\:grid-cols-2 {
@@ -2066,6 +2093,11 @@
   .md\:grid-cols-\[repeat\(var\(--navigation-count\)\,minmax\(0\,1fr\)\)\] {
     @media (width >= 48rem) {
       grid-template-columns: repeat(var(--navigation-count),minmax(0,1fr));
+    }
+  }
+  .md\:justify-between {
+    @media (width >= 48rem) {
+      justify-content: space-between;
     }
   }
   .md\:overflow-visible {
