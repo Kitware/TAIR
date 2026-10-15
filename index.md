@@ -165,7 +165,7 @@ testbed:
       text: The three-computer solution for healthcare robotics
 
 # ==================================================
-# DOCUMENTATION + DOWNLOADS
+# DOCUMENTATION
 # ==================================================
 documentation:
   subheadline: TAIR documentation
@@ -200,7 +200,6 @@ documentation:
 
 # ==================================================
 # TEAM
-# TO DO: put in logos
 # ==================================================
 team:
   subheadline: Working together
