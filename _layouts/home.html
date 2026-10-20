@@ -96,27 +96,7 @@ layout: default
     {% endif %}
     <div class="mt-12 grid border-l border-t border-base-300 md:grid-cols-2 shadow-card">
       {% for dataset in page.clinical_data.datasets %}
-        <article class="flex flex-col border-b border-r border-base-300 bg-base-100 px-6 py-9">
-          <p class="font-mono text-sm uppercase tracking-ui text-primary">
-            0{{ forloop.index }} – {{ dataset.category | escape }}
-          </p>
-          <h3 class="mt-1.25 text-lg font-bold text-heading">
-            {{ dataset.title | escape }}
-          </h3>
-          <p class="mt-5 flex-1 text-base leading-normal text-heading">
-            {{ dataset.text | escape }}
-          </p>
-          {% if dataset.details %}
-            <dl class="mt-6 border-t border-base-300">
-              {% for detail in dataset.details %}
-                <div class="flex min-h-11.5 items-center justify-between gap-5 border-b border-base-300 py-3 text-sm leading-normal">
-                  <dt class="uppercase tracking-ui text-base-content">{{ detail.label | escape }}</dt>
-                  <dd class="font-mono text-right text-copy-strong">{{ detail.value | escape }}</dd>
-                </div>
-              {% endfor %}
-            </dl>
-          {% endif %}
-        </article>
+        {% include dataset-card.html dataset=dataset index=forloop.index %}
       {% endfor %}
     </div>
     {% if page.clinical_data.download %}
@@ -126,37 +106,7 @@ layout: default
         </a>
       </div>
     {% endif %}
-    <div class="mt-12 bg-ink-950 px-6 py-9 text-white shadow-card">
-      <h3 class="text-lg font-bold">{{ page.clinical_data.license.headline | escape }}</h3>
-      <dl class="mt-6 text-sm leading-normal text-white/80">
-        {% for item in page.clinical_data.license.items %}
-          <div class="grid min-h-10.75 gap-1 border-t border-white/10 py-3 md:grid-cols-[195px_1fr]">
-            <dt class="uppercase tracking-ui text-white/55">{{ item.label | escape }}</dt>
-            <dd>{{ item.value | escape }}</dd>
-          </div>
-        {% endfor %}
-      </dl>
-      {% if page.clinical_data.citation %}
-        <div class="mt-7">
-          <p class="text-lg font-bold">{{ page.clinical_data.citation.label | escape }}</p>
-          <div class="relative mt-6 border border-primary-bright bg-primary-dark">
-            <button
-              class="btn btn-ghost btn-sm absolute right-3 top-3 z-10 rounded-none text-white hover:bg-white/10"
-              type="button"
-              data-copy-button
-              data-copy-success="{{ page.clinical_data.citation.copy_success | default: 'Copied!' | escape }}"
-              aria-label="Copy citation"
-            >
-              <i class="ri-file-copy-line text-lg" data-copy-icon aria-hidden="true"></i>
-              <span data-copy-label>
-                {{ page.clinical_data.citation.copy_label | default: 'Copy' | escape }}
-              </span>
-            </button>
-            <pre class="overflow-x-auto p-6 pr-28 font-mono text-sm leading-normal text-white/80"><code data-copy-source>{{- page.clinical_data.citation.code | escape -}}</code></pre>
-          </div>
-        </div>
-      {% endif %}
-    </div>
+    
     {% if page.clinical_data.model %}
       <article class="mt-12 grid border border-base-300 bg-base-100 md:grid-cols-[520px_1fr] shadow-card">
         <div class="p-6 md:py-9">
