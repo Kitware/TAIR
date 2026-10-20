@@ -11,7 +11,7 @@ brand:
 cta:
   button:
     label: Download dataset
-    url: "#clinical-data"
+    url: "clinical-data/" # Must not start with a slash (handled in the header include)
 
 source:
   show: true
