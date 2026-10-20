@@ -39,6 +39,18 @@ Contains all homepage content:
 - Team, partner, and acknowledgement content
 - Contact callout
 
+### `clinical-data.md`
+
+Contains the content for the clinical dataset detail page at `/clinical-data/`:
+
+- Page title and introductory text
+- Dataset tags and download link
+- Sidebar metadata
+- Dataset sections and release details
+- Citation and contributors
+
+The page uses `_layouts/dataset.html`. Repeated dataset cards and citation markup are shared with the homepage through `_includes/dataset-card.html` and `_includes/citation-code.html`.
+
 ### `_data/site.yml`
 
 Contains shared site settings:
