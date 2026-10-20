@@ -1,0 +1,58 @@
+{% assign dataset = include.dataset %}
+
+<article class="flex flex-col border-b border-r border-base-300 bg-base-100 px-6 py-9">
+  {% if dataset.category %}
+    <p class="font-mono text-sm uppercase tracking-ui text-primary">
+      {% if include.index %}0{{ include.index }} – {% endif %}{{ dataset.category | escape }}
+    </p>
+  {% endif %}
+
+  <h3 class="mt-1.25 text-lg font-bold text-heading">
+    {% if dataset.url %}
+      <a class="transition-colors hover:text-secondary" href="{{ dataset.url | relative_url }}">
+        {{ dataset.title | escape }}
+      </a>
+    {% else %}
+      {{ dataset.title | escape }}
+    {% endif %}
+  </h3>
+
+  {% if dataset.text %}
+    <p class="mt-5 flex-1 text-base leading-normal text-heading">
+      {{ dataset.text | escape }}
+    </p>
+  {% endif %}
+
+  {% if dataset.button %}
+    <div class="mt-5">
+      <a
+        class="btn btn-primary rounded-none text-primary-content"
+        href="{{ dataset.button.url }}"
+        {% if dataset.button.new_tab %}target="_blank" rel="noopener"{% endif %}
+      >
+        {% if dataset.button.icon %}
+          <i class="{{ dataset.button.icon }} text-lg" aria-hidden="true"></i>
+        {% endif %}
+        {{ dataset.button.label | escape }}
+      </a>
+    </div>
+  {% endif %}
+
+  {% if dataset.details %}
+    <dl class="mt-6 border-t border-base-300">
+      {% for detail in dataset.details %}
+        <div class="flex min-h-11.5 flex-col justify-between gap-1 border-b border-base-300 py-3 text-sm leading-normal sm:flex-row sm:items-center sm:gap-5">
+          <dt class="uppercase tracking-ui text-base-content">
+            {{ detail.label | escape }}
+            {% if detail.note %}
+              <span class="text-xs normal-case text-secondary">({{ detail.note | escape }})</span>
+            {% endif %}
+          </dt>
+          <dd class="font-mono text-copy-strong sm:max-w-2/3 sm:text-right">
+            {{ detail.value | escape }}
+          </dd>
+        </div>
+      {% endfor %}
+    </dl>
+  {% endif %}
+</article>

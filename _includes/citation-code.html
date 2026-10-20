@@ -1,0 +1,18 @@
+{% assign citation = include.citation %}
+
+<div class="relative border border-white/35 bg-primary-dark">
+  <button
+    class="btn btn-ghost btn-sm absolute right-3 top-3 z-10 rounded-none text-white hover:bg-white/10"
+    type="button"
+    data-copy-button
+    data-copy-success="{{ citation.copy_success | default: 'Copied!' | escape }}"
+    aria-label="Copy citation"
+  >
+    <i class="ri-file-copy-line text-lg" data-copy-icon aria-hidden="true"></i>
+    <span data-copy-label>
+      {{ citation.copy_label | default: 'Copy' | escape }}
+    </span>
+  </button>
+
+  <pre class="overflow-x-auto p-6 pr-28 font-mono text-xs leading-normal text-white/80"><code data-copy-source>{{- citation.code | escape -}}</code></pre>
+</div>
