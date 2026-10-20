@@ -94,7 +94,7 @@ layout: default
         {{ page.clinical_data.text | escape }}
       </p>
     {% endif %}
-    <div class="mt-12 grid border-l border-t border-base-300 md:grid-cols-2">
+    <div class="mt-12 grid border-l border-t border-base-300 md:grid-cols-2 shadow-card">
       {% for dataset in page.clinical_data.datasets %}
         <article class="flex flex-col border-b border-r border-base-300 bg-base-100 px-6 py-9">
           <p class="font-mono text-sm uppercase tracking-ui text-primary">
@@ -120,13 +120,13 @@ layout: default
       {% endfor %}
     </div>
     {% if page.clinical_data.download %}
-      <div class="flex justify-end bg-neutral p-4">
+      <div class="flex justify-end bg-neutral p-4 shadow-card">
         <a class="btn btn-primary rounded-none text-primary-content" href="{{ page.clinical_data.download.url }}">
           {{ page.clinical_data.download.label | escape }}
         </a>
       </div>
     {% endif %}
-    <div class="mt-12 bg-ink-950 px-6 py-9 text-white">
+    <div class="mt-12 bg-ink-950 px-6 py-9 text-white shadow-card">
       <h3 class="text-lg font-bold">{{ page.clinical_data.license.headline | escape }}</h3>
       <dl class="mt-6 text-sm leading-normal text-white/80">
         {% for item in page.clinical_data.license.items %}
@@ -158,7 +158,7 @@ layout: default
       {% endif %}
     </div>
     {% if page.clinical_data.model %}
-      <article class="mt-12 grid border border-base-300 bg-base-100 md:grid-cols-[520px_1fr]">
+      <article class="mt-12 grid border border-base-300 bg-base-100 md:grid-cols-[520px_1fr] shadow-card">
         <div class="p-6 md:py-9">
           <p class="font-mono text-sm uppercase tracking-ui text-primary">
             {{ page.clinical_data.model.subheadline | escape }}
