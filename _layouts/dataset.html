@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+<section class="bg-ink-950 text-white">
+  <div class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-0 lg:py-20">
+    {% if page.dataset.subheadline %}
+      <p class="font-mono text-sm uppercase tracking-section text-accent">
+        {{ page.dataset.subheadline | escape }}
+      </p>
+    {% endif %}
+
+    <h1 class="mt-4 max-w-data-heading text-4xl font-bold leading-normal text-white">
+      {{ page.dataset.headline | escape }}
+    </h1>
+
+    {% if page.dataset.text %}
+      <p class="mt-5 max-w-data-copy text-lg leading-normal text-white/70">
+        {{ page.dataset.text | escape }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="bg-base-200 py-12 lg:py-20">
+  <div class="mx-auto grid w-full max-w-7xl gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-0">
+    <div class="min-w-0 space-y-12">
+      {% if page.dataset.tags %}
+        <section class="border border-base-300 bg-base-100 px-6 py-9 shadow-card">
+          <h2 class="text-base font-medium uppercase text-base-content">Tags</h2>
+          <ul class="mt-6 flex flex-wrap gap-2.5" aria-label="Dataset tags">
+            {% for tag in page.dataset.tags %}
+              <li class="rounded-full border border-base-300 bg-base-200 px-4 py-3 tracking-ui text-copy-strong">
+                {{ tag | escape }}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      {% if page.dataset.sections %}
+        <div class="space-y-8">
+          {% for dataset_section in page.dataset.sections %}
+            <div class="border-l border-t border-base-300 shadow-card">
+              {% include dataset-card.html dataset=dataset_section index=forloop.index %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if page.dataset.citation %}
+        <section class="bg-contact p-6 text-white lg:p-9 shadow-card">
+          <h2 class="text-lg font-bold">
+            {{ page.dataset.citation.label | default: "Cite the dataset" | escape }}
+          </h2>
+          <div class="mt-6">
+            {% include citation-code.html citation=page.dataset.citation %}
+          </div>
+        </section>
+      {% endif %}
+
+      {% if page.dataset.contributors %}
+        <section class="border border-base-300 bg-base-100 px-6 py-9 shadow-card">
+          <h2 class="text-xl font-medium text-copy-strong">Contributors</h2>
+          <ul class="mt-6 flex flex-wrap gap-2.5">
+            {% for contributor in page.dataset.contributors %}
+              <li class="border border-base-300 px-4 py-3 tracking-ui text-copy-strong">
+                {{ contributor | escape }}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+    </div>
+
+    <aside class="order-first lg:order-none" aria-label="Dataset information">
+      <div class="lg:sticky lg:top-6">
+        {% if page.dataset.download %}
+          <a
+            class="btn btn-primary w-full justify-start rounded-none text-primary-content"
+            href="{{ page.dataset.download.url }}"
+          >
+            {% if page.dataset.download.icon %}
+              <i class="{{ page.dataset.download.icon }} text-lg" aria-hidden="true"></i>
+            {% endif %}
+            {{ page.dataset.download.label | escape }}
+          </a>
+        {% endif %}
+
+        {% if page.dataset.metadata %}
+          <dl class="mt-3 divide-y divide-base-300 border-y border-base-300">
+            {% for item in page.dataset.metadata %}
+              <div class="px-4 py-4">
+                <dt class="text-xs font-medium uppercase tracking-ui text-base-content/60">
+                  {{ item.label | escape }}
+                </dt>
+                <dd class="mt-1 text-sm font-semibold text-copy-strong">
+                  {{ item.value | escape }}
+                </dd>
+              </div>
+            {% endfor %}
+          </dl>
+        {% endif %}
+      </div>
+    </aside>
+  </div>
+</section>
