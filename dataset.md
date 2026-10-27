@@ -7,7 +7,7 @@ permalink: /clinical-data/
 
 dataset:
   subheadline: Clinical data set
-  headline: Clinical data for stroke intervention research and development
+  headline: Multimodal Imaging Dataset for Cerebrovascular Disease
   text: >-
     The TAIR database includes vascular imaging data that represents the critical imaging modalities essential for neurovascular procedures. These modalities are used to visualize the vascular anatomy, identify pathology, and guide procedures. These targeted datasets support workflows connected with the TAIR testbed, and also support community-wide clinical and diagnostic research. A flexible permissive license allows use in academic, government, and commercial applications.
 
@@ -77,7 +77,7 @@ dataset:
       text: >-
         This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and models generated from population statistics and shape-modeling techniques.
       button:
-        label: View on GitLab
+        label: View source code on GitLab
         url: "https://gitlab.com/"
         icon: ri-gitlab-fill
         new_tab: true
@@ -90,8 +90,7 @@ dataset:
           value: VTK · NIfTI · OpenUSD · JSON graphs
         - label: Derivatives
           value: Meshes, centerlines, SSM coefficients
-        - label: License
-          value: Creative Commons Attribution 4.0 International License (CC BY 4.0)
+      coming_soon: yes
 
   citation:
     label: Cite the dataset
@@ -109,8 +108,5 @@ dataset:
   contributors:
     - Kitware, Inc.
     - University of North Carolina at Chapel Hill
-    - Johns Hopkins University
     - University of Pittsburgh Medical Center
-    - Florida State University
-    - Lightside Surgical, Inc.
 ---
