@@ -40,7 +40,6 @@ clinical_data:
           value: Creative Commons Attribution 4.0 International (CC BY 4.0)
     - category: Flouroscopy
       title: X-Ray Flouroscopy Video
-      url: /clinical-data/
       text: >-
         Videos of X-ray fluoroscopy procedures collected from a multi-center study during interventional procedures. Fluoroscopic videos are paired with CTA/MRA imaging from the CTA/MRA database for multi-modality research and development use cases. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Algorithms were applied to remove potentially identifying facial structures and burned in text.
       details:
@@ -50,29 +49,12 @@ clinical_data:
           value: 1,250 datasets
         - label: Format
           value: DICOM cine + JSON metadata
+        - label: License
+          value: Creative Commons Attribution 4.0 International (CC BY 4.0)
   download:
     label: Download the data
-    url: "#"
+    url: "clinical-data/" # Must not start with a slash (handled in the html structure)
     icon: ri-download-line
-  license:
-    headline: License
-    items:
-      - label: Data license
-        value: Creative Commons Attribution 4.0 International (CC BY 4.0)
-      - label: Data citation
-        value: <url>
-  citation:
-    label: Cite the dataset
-    copy_label: Copy
-    copy_success: Copied!
-    code: |
-      @dataset{tair2026,
-        title  = {TAIR: Testbed for Autonomous Interventions and Robotics -- Neurovascular Data Release},
-        author = {Kitware, Inc. and UNC Chapel Hill and Johns Hopkins University and University of Pittsburgh},
-        year   = {2026},
-        publisher = {ARPA-H AIR Program},
-        license = {CC BY 4.0}
-      }
   model:
     subheadline: 03 – Anatomical Models
     headline: Segmented, centerlined, and annotated models, as well as statistical-shape models
@@ -80,11 +62,13 @@ clinical_data:
       This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and XX models generated from population statistics and shape-modeling techniques.
     button:
       label: View on GitLab
-      url: "https://gitlab.com/"
+      url: "https://gitlab.kitware.com/tair/data-annotations#"
       icon: ri-gitlab-fill
+      new_tab: true
     details:
       - label: Release
-        value: 100 models + 1 population SSM <a href="#" class="btn btn-primary btn-xs">Download models</a>
+        value: 100 models + 1 population SSM <a href="#" class="btn btn-primary btn-xs btn-disabled text-gray-500">Download models</a>
+        disabled: true
       - label: Geometry
         value: 2,000 models + multi-parameter SSMs
       - label: Formats
@@ -101,13 +85,14 @@ testbed:
   subheadline: TAIR simulator
   headline: Training and evaluation for stroke intervention simulations
   text: >-
-    Use the TAIR testbed to simulate stroke interventions across a range of patient anatomies and pathologies. The physics-based simulator represents soft-tissue mechanics, fluid dynamics, robot kinematics, and X-ray fluoroscopy. Replacement suggestion: An open interface connects robotic systems to the testbed for testing, training, and performance evaluation using FDA-defined metrics.
+    Use the TAIR testbed to simulate stroke interventions across a range of patient anatomies and pathologies. The physics-based simulator represents soft-tissue mechanics, fluid dynamics, robot kinematics, and X-ray fluoroscopy. An open interface connects robotic systems to the testbed for testing, training, and performance evaluation using FDA-defined metrics.
   callout:
     text: Access the open-source TAIR testbed and supporting resources.
+    license: Apache 2.0 license
     label: View on GitLab
-    url: "https://gitlab.com/"
+    url: "https://gitlab.kitware.com/tair/testbed"
     icon: ri-gitlab-fill
-    note: First open-source release is scheduled for March 2027
+    new_tab: true
   phases:
     - number: Offline
       title: Data preparation
@@ -135,7 +120,7 @@ testbed:
       url: "https://github.com/finetjul/TubeTK"
       new_tab: true
       text: Anatomical model segmentation and centerline extraction
-    - name: Slicersalt
+    - name: SlicerSALT
       url: "https://salt.slicer.org/"
       new_tab: true
       text: Statistical shape modeling of population-level vasculature
@@ -182,8 +167,9 @@ documentation:
       text: Each database includes a data manifest, including a list of files, data dictionary, and file sizes. The anatomic modeling software pipeline documentation can be found in the GitLab repository.
       buttons:
         - label: View on GitLab
-          url: "https://gitlab.com/"
+          url: "https://gitlab.kitware.com/tair/data-annotations#"
           icon: ri-gitlab-fill
+          new_tab: true
     - category: Platform
       title: Testbed & API
       text: The TAIR testbed documentation explains how the models are defined and implemented. It also includes class documentation, API definition and usage, and an SDK. Additional resources cover performance specifications, verification and validation cases and results, as well as version, license, and citation information.
@@ -192,8 +178,9 @@ documentation:
           url: "#"
           icon: ri-book-open-line
         - label: View on GitLab
-          url: "https://gitlab.com/"
+          url: "https://gitlab.kitware.com/tair/testbed"
           icon: ri-gitlab-fill
+          new_tab: true
     - category: Use cases
       title: Verification, validation, and credibility
       text: Working closely with the FDA and clinical collaborators, the testbed is undergoing rigorous verification, validation, and credibility assessments. The final report will be available at the conclusion of Phase I of the ARPA-H AIR program.
@@ -201,6 +188,8 @@ documentation:
         - label: Download report
           url: "#"
           icon: ri-download-line
+          disabled: true
+      coming_soon: Coming early 2028
 
 # ==================================================
 # TEAM
