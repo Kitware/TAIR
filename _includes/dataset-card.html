@@ -1,6 +1,12 @@
 {% assign dataset = include.dataset %}
 
 <article class="flex flex-col border-b border-r border-base-300 bg-base-100 px-6 py-9">
+  {% if dataset.coming_soon %}
+  <!-- Remove this notice when the model is available -->
+  <div class="bg-blue-50 border-l border-l-4 border-blue-800 text-blue-800 col-span-full mb-8 p-4">
+    Coming in December 2026
+  </div>
+  {% endif %}
   {% if dataset.category %}
     <p class="font-mono text-sm uppercase tracking-ui text-primary">
       {% if include.index %}0{{ include.index }} – {% endif %}{{ dataset.category | escape }}
@@ -8,13 +14,7 @@
   {% endif %}
 
   <h3 class="mt-1.25 text-lg font-bold text-heading">
-    {% if dataset.url %}
-      <a class="transition-colors hover:text-secondary" href="{{ dataset.url | relative_url }}">
-        {{ dataset.title | escape }}
-      </a>
-    {% else %}
-      {{ dataset.title | escape }}
-    {% endif %}
+    {{ dataset.title | escape }}
   </h3>
 
   {% if dataset.text %}
