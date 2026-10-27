@@ -99,6 +99,18 @@ layout: default
         {% include dataset-card.html dataset=dataset index=forloop.index %}
       {% endfor %}
     </div>
+    {% if page.clinical_data.license %}
+      <div class="bg-base-100 border-l border-r border-base-300 p-4 flex justify-between text-sm shadow-card">
+        <dt class="uppercase tracking-ui text-base-content">
+          License
+        </dt>
+        <dd class="font-mono text-copy-strong sm:max-w-2/3 sm:text-right">
+          <a class="" href="{{ page.clinical_data.license.url }}">
+            {{ page.clinical_data.license.label | escape }}
+          </a>
+        </dd>
+      </div>
+    {% endif %}
     {% if page.clinical_data.download %}
       <div class="flex justify-end bg-neutral p-4 shadow-card">
         <a class="btn btn-primary rounded-none text-primary-content" href="{{ page.clinical_data.download.url }}">
@@ -109,6 +121,10 @@ layout: default
     
     {% if page.clinical_data.model %}
       <article class="mt-12 grid border border-base-300 bg-base-100 md:grid-cols-[520px_1fr] shadow-card">
+        <!-- Remove this notice when the model is available -->
+        <div class="bg-blue-50 border-l border-l-4 border-blue-800 text-blue-800 col-span-full m-4 mb-0 p-4">
+          Coming in December 2026
+        </div>
         <div class="p-6 md:py-9">
           <p class="font-mono text-sm uppercase tracking-ui text-primary">
             {{ page.clinical_data.model.subheadline | escape }}
@@ -120,7 +136,7 @@ layout: default
             {{ page.clinical_data.model.text | escape }}
           </p>
           {% if page.clinical_data.model.button %}
-            <a class="btn btn-primary mt-5 rounded-none text-primary-content" href="{{ page.clinical_data.model.button.url }}">
+            <a class="btn btn-primary mt-5 rounded-none text-primary-content" href="{{ page.clinical_data.model.button.url }}"{% if page.clinical_data.model.button.new_tab %} target="_blank" rel="noopener"{% endif %}>
               <i class="{{ page.clinical_data.model.button.icon }} text-lg" aria-hidden="true"></i>
               {{ page.clinical_data.model.button.label | escape }}
             </a>
@@ -164,16 +180,16 @@ layout: default
             aria-hidden="true"
           >
           <div class="relative">
-            <p class="text-base leading-normal">{{ page.testbed.callout.text | escape }}</p>
-            <a class="btn btn-primary mt-6 rounded-none text-primary-content" href="{{ page.testbed.callout.url }}">
+            <!-- Remove this notice when the model is available -->
+            <div class="bg-blue-50 border-l border-l-4 border-blue-500 text-blue-800 text-sm col-span-full mb-6 p-4">
+              First open-source release scheduled for <strong>March 2027</strong>
+            </div>
+            <p class="text-base leading-normal font-bold">{{ page.testbed.callout.text | escape }}</p>
+            <a class="btn btn-primary mt-6 rounded-none text-primary-content" href="{{ page.testbed.callout.url }}"{% if page.testbed.callout.new_tab %} target="_blank" rel="noopener"{% endif %}>
               <i class="{{ page.testbed.callout.icon }} text-lg" aria-hidden="true"></i>
               {{ page.testbed.callout.label | escape }}
             </a>
-            {% if page.testbed.callout.note %}
-              <p class="mt-1.5 text-xs font-light text-callout-muted">
-                {{ page.testbed.callout.note | escape }}
-              </p>
-            {% endif %}
+            <p class="mt-3 text-sm font-light text-callout-muted">{{ page.testbed.callout.license | escape }}</p>
           </div>
         </div>
       {% endif %}
@@ -231,15 +247,16 @@ layout: default
           </p>
           <h3 class="mt-2.5 text-lg font-bold text-heading">{{ item.title | escape }}</h3>
           <p class="mt-6 flex-1 text-base leading-normal text-base-content">{{ item.text | escape }}</p>
-          <div class="mt-6 flex flex-wrap gap-2.5">
+          <div class="mt-6 flex flex-wrap gap-2.5 items-center">
             {% for button in item.buttons %}
-              <a class="btn btn-primary rounded-none text-primary-content" href="{{ button.url }}">
+              <a class="btn btn-primary rounded-none {% if button.disabled == true %}btn-disabled text-gray-400{% else %}text-primary-content{% endif %}" href="{{ button.url }}"{% if button.new_tab %} target="_blank" rel="noopener"{% endif %}>
                 {% if button.icon %}
                   <i class="{{ button.icon }} text-lg" aria-hidden="true"></i>
                 {% endif %}
                 {{ button.label | escape }}
               </a>
             {% endfor %}
+            <p class="text-secondary font-bold">{{ item.coming_soon | escape }}</p>
           </div>
         </article>
       {% endfor %}
