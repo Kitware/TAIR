@@ -60,11 +60,11 @@ clinical_data:
     headline: Segmented, centerlined, and annotated models, as well as statistical-shape models
     text: >-
       This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and XX models generated from population statistics and shape-modeling techniques.
-    button:
-      label: View on GitLab
-      url: "https://gitlab.kitware.com/tair/data-annotations#"
-      icon: ri-gitlab-fill
-      new_tab: true
+    # button:
+    #  label: View on GitLab
+    #  url: "https://gitlab.kitware.com/tair/data-annotations#"
+    #  icon: ri-gitlab-fill
+    #  new_tab: true
     details:
       - label: Release
         value: 100 models + 1 population SSM <a href="#" class="btn btn-primary btn-xs btn-disabled text-gray-500">Download models</a>
@@ -85,12 +85,12 @@ testbed:
   subheadline: TAIR simulator
   headline: Training and evaluation for stroke intervention simulations
   text: >-
-    Use the TAIR testbed to simulate stroke interventions across a range of patient anatomies and pathologies. The physics-based simulator represents soft-tissue mechanics, fluid dynamics, robot kinematics, and X-ray fluoroscopy. An open interface connects robotic systems to the testbed for testing, training, and performance evaluation using FDA-defined metrics.
+    Use the TAIR testbed to simulate stroke interventions across a range of patient anatomies and pathologies. The physics-based simulator represents soft-tissue mechanics, fluid dynamics, robot kinematics, and X-ray fluoroscopy.
   callout:
     text: Access the open-source TAIR testbed and supporting resources.
     license: Apache 2.0 license
     label: View on GitLab
-    url: "https://gitlab.kitware.com/tair/testbed"
+    # url: "https://gitlab.kitware.com/tair/testbed"
     icon: ri-gitlab-fill
     new_tab: true
   phases:
@@ -165,30 +165,30 @@ documentation:
     - category: Data
       title: Dataset and anatomical model documentation
       text: Each database includes a data manifest, including a list of files, data dictionary, and file sizes. The anatomic modeling software pipeline documentation can be found in the GitLab repository.
-      buttons:
-        - label: View on GitLab
-          url: "https://gitlab.kitware.com/tair/data-annotations#"
-          icon: ri-gitlab-fill
-          new_tab: true
+      #buttons:
+      #  - label: View on GitLab
+      #    url: "https://gitlab.kitware.com/tair/data-annotations#"
+      #    icon: ri-gitlab-fill
+      #    new_tab: true
     - category: Platform
       title: Testbed & API
       text: The TAIR testbed documentation explains how the models are defined and implemented. It also includes class documentation, API definition and usage, and an SDK. Additional resources cover performance specifications, verification and validation cases and results, as well as version, license, and citation information.
-      buttons:
-        - label: Tech docs
-          url: "#"
-          icon: ri-book-open-line
-        - label: View on GitLab
-          url: "https://gitlab.kitware.com/tair/testbed"
-          icon: ri-gitlab-fill
-          new_tab: true
+      #buttons:
+      #  - label: Tech docs
+      #    url: "#"
+      #    icon: ri-book-open-line
+      #  - label: View on GitLab
+      #    url: "https://gitlab.kitware.com/tair/testbed"
+      #    icon: ri-gitlab-fill
+      #    new_tab: true
     - category: Use cases
       title: Verification, validation, and credibility
       text: Working closely with the FDA and clinical collaborators, the testbed is undergoing rigorous verification, validation, and credibility assessments. The final report will be available at the conclusion of Phase I of the ARPA-H AIR program.
-      buttons:
-        - label: Download report
-          url: "#"
-          icon: ri-download-line
-          disabled: true
+      #buttons:
+      #  - label: Download report
+      #    url: "#"
+      #    icon: ri-download-line
+      #    disabled: true
       coming_soon: Coming early 2028
 
 # ==================================================
@@ -221,10 +221,10 @@ team:
         - Johns Hopkins University
         - Lightside Surgical, Inc.
   partners:
-    - name: University of Pittsburgh
-      image: '/assets/images/upitt-logo.png'
     - name: UNC Chapel Hill
       image: '/assets/images/unc-logo.jpg'
+    - name: University of Pittsburgh
+      image: '/assets/images/upitt-logo.png'
     - name: FAMU–FSU Engineering
       image: '/assets/images/fsu-logo.jpg'
     - name: LightSide

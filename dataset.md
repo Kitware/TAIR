@@ -76,11 +76,11 @@ dataset:
       title: Segmented, centerlined, and annotated models, as well as statistical-shape models
       text: >-
         This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and models generated from population statistics and shape-modeling techniques.
-      button:
-        label: View source code on GitLab
-        url: "https://gitlab.com/"
-        icon: ri-gitlab-fill
-        new_tab: true
+      #button:
+      #  label: View source code on GitLab
+      #  url: "https://gitlab.com/"
+      #  icon: ri-gitlab-fill
+      #  new_tab: true
       details:
         - label: Release 1
           value: 100 models + 1 population SSM

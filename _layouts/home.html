@@ -185,10 +185,12 @@ layout: default
               First open-source release scheduled for <strong>March 2027</strong>
             </div>
             <p class="text-base leading-normal font-bold">{{ page.testbed.callout.text | escape }}</p>
+            {% if page.testbed.callout.url %}
             <a class="btn btn-primary mt-6 rounded-none text-primary-content" href="{{ page.testbed.callout.url }}"{% if page.testbed.callout.new_tab %} target="_blank" rel="noopener"{% endif %}>
               <i class="{{ page.testbed.callout.icon }} text-lg" aria-hidden="true"></i>
               {{ page.testbed.callout.label | escape }}
             </a>
+            {% endif %}
             <p class="mt-3 text-sm font-light text-callout-muted">{{ page.testbed.callout.license | escape }}</p>
           </div>
         </div>
