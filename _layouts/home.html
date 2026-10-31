@@ -18,11 +18,15 @@ layout: default
   ></div>
   <div class="relative z-20 mx-auto flex h-18 w-full max-w-7xl shrink-0 items-center justify-between px-6 lg:px-0">
     <a href="#top" class="block shrink-0">
+      {% if site.data.site.brand.logo %}
       <img
         src="{{ site.data.site.brand.logo.src_reversed | relative_url }}"
         alt="{{ site.data.site.brand.logo.alt | escape }}"
         class="h-logo w-auto"
       >
+      {% else %}
+        <span class="h-logo w-auto font-mono font-bold text-2xl">TAIR</span>
+      {% endif %}
     </a>
     <div class="flex items-center gap-2">
       <a class="btn btn-primary btn-sm lg:btn-md rounded-none text-primary-content" href="{{ site.data.site.cta.button.url }}">

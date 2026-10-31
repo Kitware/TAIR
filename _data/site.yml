@@ -3,10 +3,10 @@
 # ==================================================
 
 brand:
-  logo:
-    src_reversed: "/assets/images/logo-light.svg"
-    src: "/assets/images/logo.svg"
-    alt: TAIR
+  #logo:
+  #  src_reversed: "/assets/images/logo-light.svg"
+  #  src: "/assets/images/logo.svg"
+  #  alt: TAIR
 
 cta:
   button:
