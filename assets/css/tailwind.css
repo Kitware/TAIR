@@ -112,6 +112,13 @@
   }
 }
 
+/* Content links utility - add to parent element to style all links within it */
+@utility content-links {
+  & a:not(.btn):not(.link-unstyled) {
+    @apply link link-secondary;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

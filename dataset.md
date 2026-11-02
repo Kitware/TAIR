@@ -31,7 +31,8 @@ dataset:
       - text: Install the <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a>.<br><em class="text-xs">No AWS account is required</em>.
       - text: Ren the command below to sync the data
     command: >-
-      aws s3 sync s3://multimodal-imaging-for-cerebrovascular-disease <local destination path> --no-sign-request
+      aws s3 sync s3://multimodal-imaging-for-cerebrovascular-disease [ local destination path ] --no-sign-request
+    note: Make sure to replace<br><strong class="font-mono bg-base-200">[ local destination path ]</strong> with your preferred destination.
 
   metadata:
     - label: ID

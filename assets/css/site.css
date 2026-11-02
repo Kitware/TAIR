@@ -2043,6 +2043,43 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .content-links {
+    & a:not(.btn):not(.link-unstyled) {
+      @layer daisyui.l1.l2.l3 {
+        cursor: pointer;
+        text-decoration-line: underline;
+      }
+      &:focus {
+        @layer daisyui.l1.l2.l3 {
+          --tw-outline-style: none;
+          outline-style: none;
+          @media (forced-colors: active) {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+          }
+        }
+      }
+      &:focus-visible {
+        @layer daisyui.l1.l2.l3 {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+      }
+      &:hover {
+        @layer daisyui.l1.l2 {
+          @media (hover: hover) {
+            color: var(--color-secondary);
+            @supports (color: color-mix(in lab, red, red)) {
+              color: color-mix(in oklab, var(--color-secondary) 80%, #000);
+            }
+          }
+        }
+      }
+      @layer daisyui.l1.l2 {
+        color: var(--color-secondary);
+      }
+    }
+  }
   .link {
     @layer daisyui.l1.l2.l3 {
       cursor: pointer;
@@ -2247,9 +2284,6 @@
   }
   .bg-blue-50 {
     background-color: var(--color-blue-50);
-  }
-  .bg-ink-800 {
-    background-color: var(--color-ink-800);
   }
   .bg-ink-950 {
     background-color: var(--color-ink-950);
@@ -2609,6 +2643,19 @@
       --fontsize: 0.6875rem;
       --btn-p: 0.5rem;
       --size: calc(var(--size-field, 0.25rem) * 6);
+    }
+  }
+  .card-sm {
+    & .card-body {
+      @layer daisyui.l1.l2 {
+        --card-p: 1rem;
+        --card-fs: 0.75rem;
+      }
+    }
+    & .card-title {
+      @layer daisyui.l1.l2 {
+        --cardtitle-fs: 1rem;
+      }
     }
   }
   .btn {

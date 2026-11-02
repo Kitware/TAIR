@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<div class="content-links">
 <section class="bg-ink-950 text-white">
   <div class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-0 lg:py-20">
     {% if page.dataset.subheadline %}
@@ -88,7 +88,7 @@ layout: default
         {% endif %}
 
         {% if page.dataset.advanced %}
-          <div class="card bg-base-100 border border-base-300 mt-4">
+          <div class="card card-sm bg-base-100 border border-base-300 mt-4">
             <div class="card-body">
               <h2 class="card-title">{{ page.dataset.advanced.title | default: "Download via the command line" | escape }}</h2>
               <ol class="list-decimal pl-6">
@@ -112,6 +112,7 @@ layout: default
 
                 <pre class="overflow-x-auto p-3 pr-28 font-mono text-xs leading-normal text-white/80"><code data-copy-source>{{- page.dataset.advanced.command | escape -}}</code></pre>
               </div>
+              <small class="text-xs text-center">{{ page.dataset.advanced.note }}</small>
             </div>
           </div>
         {% endif %}
@@ -134,3 +135,4 @@ layout: default
     </aside>
   </div>
 </section>
+</div>
