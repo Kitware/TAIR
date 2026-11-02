@@ -242,5 +242,5 @@ contact:
   text: Contact the TAIR team with questions about data, project resources, and testbed integration.
   button:
     label: Contact the TAIR team
-    url: "mailto:hello@example.org"
+    url: "mailto:TAIRContact@kitware.com"
 ---
