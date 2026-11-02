@@ -98,11 +98,13 @@ dataset:
     copy_success: Copied!
     code: |
       @dataset{tair2026,
-        title     = {TAIR: Testbed for Autonomous Interventions and Robotics -- Neurovascular Data Release},
-        author    = {Kitware, Inc. and UNC Chapel Hill and Johns Hopkins University and University of Pittsburgh},
+        author    = {{Lee, Yueh Z., de Siqueira Bucci, Ana C., Ho, James, Paniagua, Beatriz, Vicory, Jared, Ravikumar, Sadhana, Nagler, Mike, Webb, Jeffrey B., and Clipp, Rachel B.}},
+        title     = {{TAIR}: Multimodal Imaging Dataset
+                    for Cerebrovascular Disease},
         year      = {2026},
-        publisher = {ARPA-H AIR Program},
-        license   = {CC BY 4.0}
+        version   = {1.0},
+        publisher = {AWS Registry of Open Data},
+        url       = {https://TAIR.Kitware.com/clinical-data},
       }
 
   contributors:
