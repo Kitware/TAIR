@@ -25,6 +25,14 @@ dataset:
     url: "#"
     icon: ri-download-line
 
+  advanced:
+    title:
+    steps:
+      - text: Install the <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a>.<br><em class="text-xs">No AWS account is required</em>.
+      - text: Ren the command below to sync the data
+    command: >-
+      aws s3 sync s3://multimodal-imaging-for-cerebrovascular-disease <local destination path> --no-sign-request
+
   metadata:
     - label: ID
       value: TAIR-CLIN-001
@@ -94,8 +102,6 @@ dataset:
 
   citation:
     label: Cite the dataset
-    copy_label: Copy
-    copy_success: Copied!
     code: |
       @dataset{tair2026,
         author    = {{Lee, Yueh Z., de Siqueira Bucci, Ana C., Ho, James, Paniagua, Beatriz, Vicory, Jared, Ravikumar, Sadhana, Nagler, Mike, Webb, Jeffrey B., and Clipp, Rachel B.}},

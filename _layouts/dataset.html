@@ -87,6 +87,35 @@ layout: default
           </a>
         {% endif %}
 
+        {% if page.dataset.advanced %}
+          <div class="card bg-base-100 border border-base-300 mt-4">
+            <div class="card-body">
+              <h2 class="card-title">{{ page.dataset.advanced.title | default: "Download via the command line" | escape }}</h2>
+              <ol class="list-decimal pl-6">
+                {% for step in page.dataset.advanced.steps %}
+                  <li>{{ step.text }}</li>
+                {% endfor %}
+              </ol>
+              <div class="group relative border border-white/35 bg-ink-950 mt-2">
+                <button
+                  class="hidden group-hover:block btn btn-ghost btn-sm absolute inset-y-1 right-1 z-10 rounded-none text-white hover:bg-white/10 backdrop-blur-xs"
+                  type="button"
+                  data-copy-button
+                  data-copy-success="Copied!"
+                  aria-label="Copy citation"
+                >
+                  <i class="ri-file-copy-line text-lg" data-copy-icon aria-hidden="true"></i>
+                  <span data-copy-label>
+                    Copy
+                  </span>
+                </button>
+
+                <pre class="overflow-x-auto p-3 pr-28 font-mono text-xs leading-normal text-white/80"><code data-copy-source>{{- page.dataset.advanced.command | escape -}}</code></pre>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
         {% if page.dataset.metadata %}
           <dl class="mt-3 divide-y divide-base-300 border-y border-base-300">
             {% for item in page.dataset.metadata %}

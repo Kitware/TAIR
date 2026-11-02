@@ -33,11 +33,13 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --leading-normal: 1.5;
+    --blur-xs: 4px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-ink-950: #00162a;
+    --color-ink-800: #004078;
     --color-heading: #373735;
     --color-copy-strong: #1b1b1b;
     --color-nav-muted: #595959;
@@ -1181,6 +1183,436 @@
       }
     }
   }
+  .step {
+    .steps & {
+      @layer daisyui.l1.l2.l3 {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 40px 1fr;
+        place-items: center;
+        text-align: center;
+        min-width: 4rem;
+        --step-bg: var(--color-base-300);
+        --step-fg: var(--color-base-content);
+        &:before {
+          top: 0px;
+          grid-column-start: 1;
+          grid-row-start: 1;
+          height: calc(0.25rem * 2);
+          width: 100%;
+          border: 1px solid;
+          color: var(--step-bg);
+          background-color: var(--step-bg);
+          content: "";
+          margin-inline-start: -100%;
+        }
+        > .step-icon, &:not(:has(.step-icon)):after {
+          --tw-content: counter(step);
+          content: var(--tw-content);
+          counter-increment: step;
+          z-index: 1;
+          color: var(--step-fg);
+          background-color: var(--step-bg);
+          border: 1px solid var(--step-bg);
+          position: relative;
+          grid-column-start: 1;
+          grid-row-start: 1;
+          display: grid;
+          height: calc(0.25rem * 8);
+          width: calc(0.25rem * 8);
+          place-items: center;
+          place-self: center;
+          border-radius: calc(infinity * 1px);
+        }
+        &:first-child:before {
+          --tw-content: none;
+          content: var(--tw-content);
+        }
+        &[data-content]:after {
+          --tw-content: attr(data-content);
+          content: var(--tw-content);
+        }
+      }
+    }
+    .steps-horizontal & {
+      @layer daisyui.l1.l2 {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 40px 1fr;
+        place-items: center;
+        text-align: center;
+        min-width: 4rem;
+        &:before {
+          height: calc(0.25rem * 2);
+          width: 100%;
+          translate: 0;
+          margin-inline-start: -100%;
+        }
+        [dir="rtl"] &:before {
+          translate: 0;
+        }
+      }
+    }
+    .steps-vertical & {
+      @layer daisyui.l1.l2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: repeat(1, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 0.5rem;
+        min-height: 4rem;
+        justify-items: start;
+        &:before {
+          height: 100%;
+          width: calc(0.25rem * 2);
+          translate: -50% -50%;
+          margin-inline-start: 50%;
+        }
+        [dir="rtl"] &:before {
+          translate: 50% -50%;
+        }
+      }
+    }
+  }
+  .steps {
+    @layer daisyui.l1.l2.l3 {
+      display: inline-grid;
+      grid-auto-flow: column;
+      overflow: hidden;
+      overflow-x: auto;
+      counter-reset: step;
+      grid-auto-columns: 1fr;
+    }
+    & .step {
+      @layer daisyui.l1.l2.l3 {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 40px 1fr;
+        place-items: center;
+        text-align: center;
+        min-width: 4rem;
+        --step-bg: var(--color-base-300);
+        --step-fg: var(--color-base-content);
+        &:before {
+          top: 0px;
+          grid-column-start: 1;
+          grid-row-start: 1;
+          height: calc(0.25rem * 2);
+          width: 100%;
+          border: 1px solid;
+          color: var(--step-bg);
+          background-color: var(--step-bg);
+          content: "";
+          margin-inline-start: -100%;
+        }
+        > .step-icon, &:not(:has(.step-icon)):after {
+          --tw-content: counter(step);
+          content: var(--tw-content);
+          counter-increment: step;
+          z-index: 1;
+          color: var(--step-fg);
+          background-color: var(--step-bg);
+          border: 1px solid var(--step-bg);
+          position: relative;
+          grid-column-start: 1;
+          grid-row-start: 1;
+          display: grid;
+          height: calc(0.25rem * 8);
+          width: calc(0.25rem * 8);
+          place-items: center;
+          place-self: center;
+          border-radius: calc(infinity * 1px);
+        }
+        &:first-child:before {
+          --tw-content: none;
+          content: var(--tw-content);
+        }
+        &[data-content]:after {
+          --tw-content: attr(data-content);
+          content: var(--tw-content);
+        }
+      }
+    }
+    & .step-neutral + .step-neutral:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-neutral);
+        --step-fg: var(--color-neutral-content);
+      }
+    }
+    & .step-neutral:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-neutral);
+        --step-fg: var(--color-neutral-content);
+      }
+    }
+    & .step-neutral  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-neutral);
+        --step-fg: var(--color-neutral-content);
+      }
+    }
+    & .step-primary + .step-primary:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-primary);
+        --step-fg: var(--color-primary-content);
+      }
+    }
+    & .step-primary:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-primary);
+        --step-fg: var(--color-primary-content);
+      }
+    }
+    & .step-primary  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-primary);
+        --step-fg: var(--color-primary-content);
+      }
+    }
+    & .step-secondary + .step-secondary:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-secondary);
+        --step-fg: var(--color-secondary-content);
+      }
+    }
+    & .step-secondary:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-secondary);
+        --step-fg: var(--color-secondary-content);
+      }
+    }
+    & .step-secondary  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-secondary);
+        --step-fg: var(--color-secondary-content);
+      }
+    }
+    & .step-accent + .step-accent:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-accent);
+        --step-fg: var(--color-accent-content);
+      }
+    }
+    & .step-accent:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-accent);
+        --step-fg: var(--color-accent-content);
+      }
+    }
+    & .step-accent  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-accent);
+        --step-fg: var(--color-accent-content);
+      }
+    }
+    & .step-info + .step-info:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-info);
+        --step-fg: var(--color-info-content);
+      }
+    }
+    & .step-info:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-info);
+        --step-fg: var(--color-info-content);
+      }
+    }
+    & .step-info  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-info);
+        --step-fg: var(--color-info-content);
+      }
+    }
+    & .step-success + .step-success:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-success);
+        --step-fg: var(--color-success-content);
+      }
+    }
+    & .step-success:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-success);
+        --step-fg: var(--color-success-content);
+      }
+    }
+    & .step-success  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-success);
+        --step-fg: var(--color-success-content);
+      }
+    }
+    & .step-warning + .step-warning:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-warning);
+        --step-fg: var(--color-warning-content);
+      }
+    }
+    & .step-warning:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-warning);
+        --step-fg: var(--color-warning-content);
+      }
+    }
+    & .step-warning  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-warning);
+        --step-fg: var(--color-warning-content);
+      }
+    }
+    & .step-error + .step-error:before {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-error);
+        --step-fg: var(--color-error-content);
+      }
+    }
+    & .step-error:after {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-error);
+        --step-fg: var(--color-error-content);
+      }
+    }
+    & .step-error  > .step-icon {
+      @layer daisyui.l1.l2 {
+        --step-bg: var(--color-error);
+        --step-fg: var(--color-error-content);
+      }
+    }
+  }
+  .card-body {
+    @layer daisyui.l1.l2.l3 {
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+      gap: calc(0.25rem * 2);
+      padding: var(--card-p, 1.5rem);
+      font-size: var(--card-fs, 0.875rem);
+    }
+    & p {
+      @layer daisyui.l1.l2.l3.l4 {
+        flex-grow: 1;
+      }
+    }
+    .image-full > & {
+      @layer daisyui.l1.l2 {
+        position: relative;
+        color: var(--color-neutral-content);
+      }
+    }
+    .card-xs & {
+      @layer daisyui.l1.l2 {
+        --card-p: 0.5rem;
+        --card-fs: 0.6875rem;
+      }
+    }
+    .card-sm & {
+      @layer daisyui.l1.l2 {
+        --card-p: 1rem;
+        --card-fs: 0.75rem;
+      }
+    }
+    .card-md & {
+      @layer daisyui.l1.l2 {
+        --card-p: 1.5rem;
+        --card-fs: 0.875rem;
+      }
+    }
+    .card-lg & {
+      @layer daisyui.l1.l2 {
+        --card-p: 2rem;
+        --card-fs: 1rem;
+      }
+    }
+    .card-xl & {
+      @layer daisyui.l1.l2 {
+        --card-p: 2.5rem;
+        --card-fs: 1.125rem;
+      }
+    }
+  }
+  .card {
+    @layer daisyui.l1.l2.l3 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius-box);
+      transition: outline 0.2s ease-in-out;
+      outline: 2px solid #0000;
+      outline-offset: 2px;
+    }
+    &:focus-visible {
+      @layer daisyui.l1.l2.l3 {
+        outline-color: currentColor;
+      }
+    }
+    &[aria-checked="true"] {
+      @layer daisyui.l1.l2.l3 {
+        outline-color: currentColor;
+      }
+    }
+    &:has( > :checked,  > :is([type="checkbox"], [type="radio"]):focus-visible) {
+      @layer daisyui.l1.l2.l3 {
+        outline-color: currentColor;
+      }
+    }
+    &:has( > :checked:focus-visible) {
+      @layer daisyui.l1.l2.l3 {
+        outline-width: 4px;
+      }
+    }
+    &[aria-checked="true"]:focus-visible {
+      @layer daisyui.l1.l2.l3 {
+        outline-width: 4px;
+      }
+    }
+    &[aria-checked="true"]:has( > :is([type="checkbox"], [type="radio"]):focus-visible) {
+      @layer daisyui.l1.l2.l3 {
+        outline-width: 4px;
+      }
+    }
+    &:has( > :is([type="checkbox"], [type="radio"])) {
+      @layer daisyui.l1.l2.l3 {
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+    & > :is([type="checkbox"], [type="radio"]) {
+      @layer daisyui.l1.l2.l3 {
+        appearance: none;
+      }
+    }
+    & figure:first-child {
+      @layer daisyui.l1.l2.l3.l4 {
+        overflow: hidden;
+        border-start-start-radius: inherit;
+        border-start-end-radius: inherit;
+        border-end-start-radius: unset;
+        border-end-end-radius: unset;
+      }
+    }
+    & figure:last-child {
+      @layer daisyui.l1.l2.l3.l4 {
+        overflow: hidden;
+        border-start-start-radius: unset;
+        border-start-end-radius: unset;
+        border-end-start-radius: inherit;
+        border-end-end-radius: inherit;
+      }
+    }
+    & figure {
+      @layer daisyui.l1.l2.l3.l4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
   .absolute {
     position: absolute;
   }
@@ -1198,6 +1630,9 @@
   }
   .inset-x-0 {
     inset-inline: calc(var(--spacing) * 0);
+  }
+  .inset-y-1 {
+    inset-block: calc(var(--spacing) * 1);
   }
   .dropdown-end {
     @layer daisyui.l1.l2 {
@@ -1238,6 +1673,9 @@
   }
   .top-3 {
     top: calc(var(--spacing) * 3);
+  }
+  .right-1 {
+    right: calc(var(--spacing) * 1);
   }
   .right-3 {
     right: calc(var(--spacing) * 3);
@@ -1390,6 +1828,9 @@
   .mt-1\.25 {
     margin-top: calc(var(--spacing) * 1.25);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-2\.5 {
     margin-top: calc(var(--spacing) * 2.5);
   }
@@ -1448,6 +1889,40 @@
         display: grid;
         place-items: start;
         gap: calc(0.25rem * 2);
+      }
+    }
+  }
+  .card-title {
+    @layer daisyui.l1.l2.l3 {
+      display: flex;
+      align-items: center;
+      gap: calc(0.25rem * 2);
+      font-size: var(--cardtitle-fs, 1.125rem);
+      font-weight: 600;
+    }
+    .card-xs & {
+      @layer daisyui.l1.l2 {
+        --cardtitle-fs: 0.875rem;
+      }
+    }
+    .card-sm & {
+      @layer daisyui.l1.l2 {
+        --cardtitle-fs: 1rem;
+      }
+    }
+    .card-md & {
+      @layer daisyui.l1.l2 {
+        --cardtitle-fs: 1.125rem;
+      }
+    }
+    .card-lg & {
+      @layer daisyui.l1.l2 {
+        --cardtitle-fs: 1.25rem;
+      }
+    }
+    .card-xl & {
+      @layer daisyui.l1.l2 {
+        --cardtitle-fs: 1.375rem;
       }
     }
   }
@@ -1601,6 +2076,9 @@
   }
   .snap-start {
     scroll-snap-align: start;
+  }
+  .list-decimal {
+    list-style-type: decimal;
   }
   .list-disc {
     list-style-type: disc;
@@ -1770,6 +2248,9 @@
   .bg-blue-50 {
     background-color: var(--color-blue-50);
   }
+  .bg-ink-800 {
+    background-color: var(--color-ink-800);
+  }
   .bg-ink-950 {
     background-color: var(--color-ink-950);
   }
@@ -1823,6 +2304,9 @@
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -1892,6 +2376,9 @@
   }
   .pb-section-bottom {
     padding-bottom: var(--spacing-section-bottom);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
   }
   .text-center {
     text-align: center;
@@ -2084,6 +2571,11 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .backdrop-blur-xs {
+    --tw-backdrop-blur: blur(var(--blur-xs));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -2123,6 +2615,20 @@
     .aura:has( > &,  > .input,  > .select) {
       @layer daisyui.l1.l2.l3 {
         --aura-radius: var(--radius-field);
+      }
+    }
+  }
+  .card {
+    .aura:has( > &,  > .alert) {
+      @layer daisyui.l1.l2.l3 {
+        --aura-radius: var(--radius-box);
+      }
+    }
+  }
+  .group-hover\:block {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        display: block;
       }
     }
   }
@@ -2715,6 +3221,42 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -2755,6 +3297,15 @@
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
       --tw-duration: initial;
     }
   }
