@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="164" height="33" viewBox="0 0 164 33" role="img" aria-labelledby="title">
-  <title id="title">TAIR — Kitware + AIR</title>
-  <text x="0" y="24" fill="#373735" font-family="Space Grotesk,Arial,sans-serif" font-size="26" font-weight="700">TAIR</text>
-  <text x="64" y="22" fill="#00559e" font-family="Space Grotesk,Arial,sans-serif" font-size="16" font-weight="300">Kitware + AIR</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 52.83 33">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #373735;
+        font-family: SpaceGrotesk-Bold, 'Space Grotesk';
+        font-size: 26px;
+        font-weight: 700;
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <text class="st0" transform="translate(0 24)"><tspan x="0" y="0">TAIR</tspan></text>
 </svg>
-
