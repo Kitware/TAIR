@@ -6,7 +6,7 @@ description: Clinical data for stroke intervention research and development.
 permalink: /clinical-data/
 
 dataset:
-  subheadline: Clinical data set
+  subheadline: Clinical dataset
   headline: Multimodal Imaging Dataset for Cerebrovascular Disease
   text: >-
     The TAIR database includes vascular imaging data that represents the critical imaging modalities essential for neurovascular procedures. These modalities are used to visualize the vascular anatomy, identify pathology, and guide procedures. These targeted datasets support workflows connected with the TAIR testbed, and also support community-wide clinical and diagnostic research. A flexible permissive license allows use in academic, government, and commercial applications.

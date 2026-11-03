@@ -22,7 +22,7 @@ source:
 # Quote URLs beginning with # because YAML treats # as a comment.
 # The hero columns automatically match the number of items.
 navigation:
-  - label: Clinical data sets
+  - label: Clinical datasets
     url: "#clinical-data"
     detail: CT/MR • Fluoroscopy
   - label: TAIR simulator
