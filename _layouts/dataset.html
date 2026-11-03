@@ -77,20 +77,24 @@ layout: default
       <div class="lg:sticky lg:top-6">
         {% if page.dataset.download %}
           <a
-            class="btn btn-primary w-full justify-start rounded-none text-primary-content"
+            class="btn btn-primary w-full justify-start rounded-none text-primary-content items-center"
             href="{{ page.dataset.download.url }}"
+            rel="nofollow"
           >
             {% if page.dataset.download.icon %}
               <i class="{{ page.dataset.download.icon }} text-lg" aria-hidden="true"></i>
             {% endif %}
-            {{ page.dataset.download.label | escape }}
+            <span class="flex flex-grow items-center justify-between">
+              <span>{{ page.dataset.download.label }}</span>
+              <span class="text-xs opacity-70">{{ page.dataset.download.info }}</span>
+            </span>
           </a>
         {% endif %}
 
         {% if page.dataset.advanced %}
           <div class="card card-sm bg-base-100 border border-base-300 mt-4">
             <div class="card-body">
-              <h2 class="card-title">{{ page.dataset.advanced.title | default: "Download via the command line" | escape }}</h2>
+              <h2 class="card-title text-sm">{{ page.dataset.advanced.title | default: "Download via the command line" | escape }}</h2>
               <ol class="list-decimal pl-6">
                 {% for step in page.dataset.advanced.steps %}
                   <li>{{ step.text }}</li>
@@ -102,7 +106,7 @@ layout: default
                   type="button"
                   data-copy-button
                   data-copy-success="Copied!"
-                  aria-label="Copy citation"
+                  aria-label="Copy command"
                 >
                   <i class="ri-file-copy-line text-lg" data-copy-icon aria-hidden="true"></i>
                   <span data-copy-label>

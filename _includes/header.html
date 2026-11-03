@@ -44,11 +44,7 @@
         </ul>
       </details>
 
-      {% if page.url == "/clinical-data/" %}
-      <a class="btn btn-primary btn-sm lg:btn-md shrink-0 whitespace-nowrap rounded-none text-primary-content" href="{{ page.dataset.download.url }}">
-        {{ site.data.site.cta.button.label | escape }}
-      </a>
-      {% else %}
+      {% if page.url != "/clinical-data/" %}
       <a class="btn btn-primary btn-sm lg:btn-md shrink-0 whitespace-nowrap rounded-none text-primary-content" href="{% if static_header %}{{ '/' | relative_url }}{% endif %}{{ site.data.site.cta.button.url }}">
         {{ site.data.site.cta.button.label | escape }}
       </a>
