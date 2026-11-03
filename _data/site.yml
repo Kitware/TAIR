@@ -33,7 +33,7 @@ navigation:
     detail: Data dictionary, API, and V&V
   - label: Team
     url: "#team"
-    detail: Kitware + ARPA H
+    detail: Kitware + ARPA-H
 
 footer:
   disclaimer: This research was funded, in part, by the Advanced Research Projects Agency for Health (ARPA-H). The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the U.S. Government.
