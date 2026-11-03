@@ -30,9 +30,9 @@ clinical_data:
       text: >-
         A large-scale multi-center compilation of Computed Tomography Angiography (CTA) and Magnetic Resonance Angiography (MRA). All data were collected as part of routine critical care. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Defacing algorithms were applied to remove potentially identifying facial structures.
       details:
-        - label: Current release (12.34.2027)
+        - label: Current release (11.3.2026)
           value: 500 studies
-        - label: Final release (12.34.2027)
+        - label: Final release (12.30.2027)
           value: 2,000 studies
         - label: Format
           value: DICOM
@@ -43,12 +43,12 @@ clinical_data:
       text: >-
         Videos of X-ray fluoroscopy procedures collected from a multi-center study during interventional procedures. Fluoroscopic videos are paired with CTA/MRA imaging from the CTA/MRA database for multi-modality research and development use cases. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Algorithms were applied to remove potentially identifying facial structures and burned in text.
       details:
-        - label: Current release (12.34.2027)
-          value: 125–250 datasets
-        - label: Final release (12.34.2027)
+        - label: Current release (11.3.2026)
+          value: 150 datasets
+        - label: Final release (12.30.2027)
           value: 1,250 datasets
         - label: Format
-          value: DICOM cine + JSON metadata
+          value: MP4
         - label: License
           value: Creative Commons Attribution 4.0 International (CC BY 4.0)
   download:
@@ -116,10 +116,14 @@ testbed:
   platforms_text: >-
     Rather than a bespoke one-off simulator, TAIR extends toolkits the team already develops and maintains — and contributes every improvement back upstream.
   platforms:
-    - name: 3D Slicer · TubeTK
+    - name: 3D Slicer
+      url: "https://slicer.org/"
+      new_tab: true
+      text: Anatomical model segmentation
+    - name: TubeTK
       url: "https://github.com/finetjul/TubeTK"
       new_tab: true
-      text: Anatomical model segmentation and centerline extraction
+      text: Centerline extraction
     - name: SlicerSALT
       url: "https://salt.slicer.org/"
       new_tab: true
@@ -136,22 +140,22 @@ testbed:
       url: "https://openusd.org/"
       new_tab: true
       text: Scene composition — the patient-specific digital twin
-    - name: VTK · ITK
+    - name: VTK
       url: "https://vtk.org/"
       new_tab: true
       text: Registration, scene graph assembly, and visualization
-    - name: DeepDRR · ASTRA
+    - name: DeepDRR
       url: "https://github.com/arcadelab/deepdrr"
       new_tab: true
       text: Physics-based X-ray image formation and reconstruction
-    - name: NVIDIA Isaac Sim · ROS 2
+    - name: ROS2
+      url: "https://www.ros.org/"
+      new_tab: true
+      text: Bidirectional Communication Interface
+    - name: NVIDIA Isaac Sim
       url: "https://developer.nvidia.com/isaac/sim"
       new_tab: true
-      text: Robot digital twin, two-way interface, HITL testing
-    - name: NVIDIA Isaac for Healthcare
-      url: "https://developer.nvidia.com/isaac/healthcare"
-      new_tab: true
-      text: The three-computer solution for healthcare robotics
+      text: Robot digital twin and HITL Testing
 
 # ==================================================
 # DOCUMENTATION
@@ -221,6 +225,8 @@ team:
         - Johns Hopkins University
         - Lightside Surgical, Inc.
   partners:
+    - name: Kitware, Inc.
+      image: '/assets/images/kitware-logo.png'
     - name: UNC Chapel Hill
       image: '/assets/images/unc-logo.jpg'
     - name: University of Pittsburgh
@@ -242,5 +248,5 @@ contact:
   text: Contact the TAIR team with questions about data, project resources, and testbed integration.
   button:
     label: Contact the TAIR team
-    url: "mailto:TAIRContact@kitware.com"
+  email: TAIRContact@kitware.com
 ---

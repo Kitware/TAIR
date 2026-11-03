@@ -26,7 +26,6 @@ dataset:
     icon: ri-download-line
 
   advanced:
-    title:
     steps:
       - text: Install the <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a>.<br><em class="text-xs">No AWS account is required</em>.
       - text: Ren the command below to sync the data
@@ -35,10 +34,8 @@ dataset:
     note: Make sure to replace<br><strong class="font-mono bg-base-200">[ local destination path ]</strong> with your preferred destination.
 
   metadata:
-    - label: ID
-      value: TAIR-CLIN-001
     - label: Contact
-      value: TAIR Data Team
+      value: <a href="mailto:TAIRcontact@kitware.com">TAIRcontact@kitware.com</a>
     - label: Size
       value: 4.2 TB
     - label: Studies
@@ -49,8 +46,6 @@ dataset:
       value: September 22, 2026
     - label: License
       value: CC BY 4.0
-    - label: Access
-      value: Open Access
 
   sections:
     - category: CTA / MRA
@@ -59,10 +54,10 @@ dataset:
         A large-scale multi-center compilation of Computed Tomography Angiography (CTA) and Magnetic Resonance Angiography (MRA). All data were collected as part of routine critical care. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Defacing algorithms were applied to remove potentially identifying facial structures.
       details:
         - label: Current release
-          note: 12.34.2027
+          note: 11.3.2026
           value: 500 studies
         - label: Final release
-          note: 12.34.2027
+          note: 12.30.2027
           value: 2,000 studies
         - label: Format
           value: DICOM
@@ -73,13 +68,13 @@ dataset:
         Videos of X-ray fluoroscopy procedures collected from a multi-center study during interventional procedures. Fluoroscopic videos are paired with CTA/MRA imaging from the CTA/MRA database for multi-modality research and development use cases. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Algorithms were applied to remove potentially identifying facial structures and burned-in text.
       details:
         - label: Current release
-          note: 12.34.2027
-          value: 125–250 datasets
+          note: 11.3.2026
+          value: 150 datasets
         - label: Final release
-          note: 12.34.2027
+          note: 12.30.2027
           value: 1,250 datasets
-        - label: Formats
-          value: DICOM cine + JSON metadata
+        - label: Format
+          value: MP4
 
     - category: Anatomical models
       title: Segmented, centerlined, and annotated models, as well as statistical-shape models
@@ -117,5 +112,4 @@ dataset:
   contributors:
     - Kitware, Inc.
     - University of North Carolina at Chapel Hill
-    - University of Pittsburgh Medical Center
 ---

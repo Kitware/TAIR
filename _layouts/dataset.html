@@ -122,10 +122,10 @@ layout: default
             {% for item in page.dataset.metadata %}
               <div class="px-4 py-4">
                 <dt class="text-xs font-medium uppercase tracking-ui text-base-content/60">
-                  {{ item.label | escape }}
+                  {{ item.label }}
                 </dt>
                 <dd class="mt-1 text-sm font-semibold text-copy-strong">
-                  {{ item.value | escape }}
+                  {{ item.value }}
                 </dd>
               </div>
             {% endfor %}
