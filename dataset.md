@@ -76,7 +76,7 @@ dataset:
           value: MP4
 
     - category: Anatomical models
-      title: Segmented, centerlined, and annotated models, as well as statistical-shape models
+      title: Segmented, centerlined, and annotated models, as well as Statistical Shape Model (SSM) models
       text: >-
         This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and models generated from population statistics and shape-modeling techniques.
       #button:

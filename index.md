@@ -57,7 +57,7 @@ clinical_data:
     icon: ri-download-line
   model:
     subheadline: 03 – Anatomical Models
-    headline: Segmented, centerlined, and annotated models, as well as statistical-shape models
+    headline: Segmented, centerlined, and annotated models, as well as Statistical Shape Model (SSM) models
     text: >-
       This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and 100 models generated from population statistics and shape-modeling techniques.
     # button:
@@ -151,11 +151,11 @@ testbed:
     - name: ROS2
       url: "https://www.ros.org/"
       new_tab: true
-      text: Bidirectional Communication Interface
+      text: Bidirectional communication interface
     - name: NVIDIA Isaac Sim
       url: "https://developer.nvidia.com/isaac/sim"
       new_tab: true
-      text: Robot digital twin and HITL Testing
+      text: Robot digital twin and Human-in-the-Loop testing
 
 # ==================================================
 # DOCUMENTATION
