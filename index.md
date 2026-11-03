@@ -59,7 +59,7 @@ clinical_data:
     subheadline: 03 – Anatomical Models
     headline: Segmented, centerlined, and annotated models, as well as statistical-shape models
     text: >-
-      This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and XX models generated from population statistics and shape-modeling techniques.
+      This database includes 100 segmented, centerlined, and annotated CTA/MRA datasets, 50 annotated video fluoroscopy datasets, and 100 models generated from population statistics and shape-modeling techniques.
     # button:
     #  label: View on GitLab
     #  url: "https://gitlab.kitware.com/tair/data-annotations#"
