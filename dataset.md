@@ -21,18 +21,18 @@ dataset:
     - neurovascular
 
   download:
-    label: Download the data
-    url: "#"
+    label: Download the data (70 GB .zip)
+    url: "https://multimodal-imaging-for-cerebrovascular-disease.s3.us-east-1.amazonaws.com/tair-project-data.zip"
     icon: ri-download-line
 
   advanced:
     title:
     steps:
       - text: Install the <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a>.<br><em class="text-xs">No AWS account is required</em>.
-      - text: Ren the command below to sync the data
+      - text: Run the command below to download the data
     command: >-
-      aws s3 sync s3://multimodal-imaging-for-cerebrovascular-disease [ local destination path ] --no-sign-request
-    note: Make sure to replace<br><strong class="font-mono bg-base-200">[ local destination path ]</strong> with your preferred destination.
+      aws s3 cp s3://multimodal-imaging-for-cerebrovascular-disease/tair-project-data.zip . --no-sign-request
+    note: The download is 70 GB. Please ensure sufficient disk space when downloading.
 
   metadata:
     - label: ID

@@ -79,6 +79,7 @@ layout: default
           <a
             class="btn btn-primary w-full justify-start rounded-none text-primary-content"
             href="{{ page.dataset.download.url }}"
+            rel="nofollow"
           >
             {% if page.dataset.download.icon %}
               <i class="{{ page.dataset.download.icon }} text-lg" aria-hidden="true"></i>
@@ -102,7 +103,7 @@ layout: default
                   type="button"
                   data-copy-button
                   data-copy-success="Copied!"
-                  aria-label="Copy citation"
+                  aria-label="Copy command"
                 >
                   <i class="ri-file-copy-line text-lg" data-copy-icon aria-hidden="true"></i>
                   <span data-copy-label>
