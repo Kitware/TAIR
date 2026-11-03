@@ -35,7 +35,7 @@ clinical_data:
         - label: Final release (12.30.2027)
           value: 2,000 studies
         - label: Format
-          value: DICOM
+          value: NIfTI
         - label: License
           value: Creative Commons Attribution 4.0 International (CC BY 4.0)
     - category: Flouroscopy

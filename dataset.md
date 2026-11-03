@@ -16,7 +16,7 @@ dataset:
     - CTA
     - MRA
     - x-ray fluoroscopy
-    - DICOM
+    - NIfTI
     - segmentation
     - neurovascular
 
@@ -59,7 +59,7 @@ dataset:
           note: 12.30.2027
           value: 2,000 studies
         - label: Format
-          value: DICOM
+          value: NIfTI
 
     - category: Fluoroscopy
       title: X-Ray Fluoroscopy Video
