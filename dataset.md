@@ -99,13 +99,13 @@ dataset:
     label: Cite the dataset
     code: |
       @dataset{tair2026,
-        author    = {{Lee, Yueh Z., de Siqueira Bucci, Ana C., Ho, James, Paniagua, Beatriz, Vicory, Jared, Ravikumar, Sadhana, Nagler, Mike, Webb, Jeffrey B., and Clipp, Rachel B.}},
+        author    = {Lee, Yueh Z. and de Siqueira Bucci, Ana C. and Ho, James and Paniagua, Beatriz and Vicory, Jared and Ravikumar, Sadhana and Nagler, Mike and Webb, Jeffrey B. and Clipp, Rachel B.},
         title     = {{TAIR}: Multimodal Imaging Dataset
                     for Cerebrovascular Disease},
         year      = {2026},
         version   = {1.0},
         publisher = {AWS Registry of Open Data},
-        url       = {https://TAIR.Kitware.com/clinical-data},
+        url       = {https://tair.kitware.com/clinical-data},
       }
 
   contributors:
