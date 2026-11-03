@@ -339,12 +339,15 @@ layout: default
   <div class="relative mx-auto w-full max-w-7xl px-6 py-15 lg:px-0">
     <h2 class="text-4xl font-bold leading-normal">{{ page.contact.headline | escape }}</h2>
     <p class="mt-1.5 text-contact">{{ page.contact.text | escape }}</p>
-    <a
-      class="btn btn-primary mt-7 shrink-0 rounded-none px-4.5 py-3.5 text-lg text-primary-content"
-      href="{{ page.contact.button.url }}"
-    >
-      {{ page.contact.button.label | escape }}
-    </a>
+    <div class="flex items-center gap-6 mt-7">
+      <a
+        class="btn btn-primary shrink-0 rounded-none px-4.5 py-3.5 text-lg text-primary-content"
+        href="mailto:{{ page.contact.email }}"
+      >
+        {{ page.contact.button.label }}
+      </a>
+      <p class="text-sm text-white/60">{{ page.contact.email }}</p>
+    </div>
   </div>
 </section>
 </div>
