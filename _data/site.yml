@@ -24,7 +24,7 @@ source:
 navigation:
   - label: Clinical data sets
     url: "#clinical-data"
-    detail: CT/MR • Flouroscopy
+    detail: CT/MR • Fluoroscopy
   - label: TAIR simulator
     url: "#testbed"
     detail: Real-time multiphysics and robots

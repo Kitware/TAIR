@@ -38,8 +38,8 @@ clinical_data:
           value: NIfTI
         - label: License
           value: Creative Commons Attribution 4.0 International (CC BY 4.0)
-    - category: Flouroscopy
-      title: X-Ray Flouroscopy Video
+    - category: Fluoroscopy
+      title: X-Ray Fluoroscopy Video
       text: >-
         Videos of X-ray fluoroscopy procedures collected from a multi-center study during interventional procedures. Fluoroscopic videos are paired with CTA/MRA imaging from the CTA/MRA database for multi-modality research and development use cases. Prior to release, all data were rigorously de-identified through removal of PHI from the image metadata. Algorithms were applied to remove potentially identifying facial structures and burned in text.
       details:
