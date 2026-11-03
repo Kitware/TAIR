@@ -11,6 +11,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - netlify.toml
+  - _notebooks
 
 defaults:
   - scope:
